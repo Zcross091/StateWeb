@@ -383,42 +383,59 @@
   });
   calculateSpeedupPoints();
 
-  // --- 7. STATE TRANSFER APPLICATION GENERATOR ---
+  // --- 7. STATE TRANSFER APPLICATION GENERATOR & DISCORD WEBHOOK ---
   const tfName = document.getElementById('tf-player-name');
-  const tfPower = document.getElementById('tf-power');
-  const tfFurnace = document.getElementById('tf-furnace');
+  const tfOriginState = document.getElementById('tf-origin-state');
+  const tfCurrentAlliance = document.getElementById('tf-current-alliance');
   const tfAlliance = document.getElementById('tf-alliance-pref');
+  const tfFurnace = document.getElementById('tf-furnace');
+  const tfPower = document.getElementById('tf-power');
   const tfLang = document.getElementById('tf-language');
   const tfTz = document.getElementById('tf-tz');
+  const tfDiscord = document.getElementById('tf-discord');
   const tfOutput = document.getElementById('tf-letter-output');
   const btnCopyTf = document.getElementById('btn-copy-transfer');
+  const btnSendDiscord = document.getElementById('btn-send-discord');
+  const tfStatusMsg = document.getElementById('tf-status-msg');
+
+  const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1558929497045209190/McmVaW2_g8z_DTg_z21OGEij54R2x9y6KuQ9FVmVb1KONgIs0hV22brzB6mvIrcFnuHB';
 
   function updateTransferLetter() {
     if (!tfOutput) return;
     const name = (tfName && tfName.value.trim()) || '[In-Game Name]';
-    const power = (tfPower && tfPower.value.trim()) || '[Current Power]';
+    const originState = (tfOriginState && tfOriginState.value.trim()) || '[Current State]';
+    const curAlliance = (tfCurrentAlliance && tfCurrentAlliance.value.trim()) || '[Current Alliance]';
+    const targetAlliance = (tfAlliance && tfAlliance.value) || 'Any Top 3 (AVM / SOK / ORA)';
     const furnace = (tfFurnace && tfFurnace.value) || 'FC 5';
-    const alliance = (tfAlliance && tfAlliance.value) || 'Any Top 3 (AVM / SOK / ORA)';
+    const power = (tfPower && tfPower.value.trim()) || '[Current Power]';
     const lang = (tfLang && tfLang.value.trim()) || 'English';
     const tz = (tfTz && tfTz.value.trim()) || 'UTC+0';
+    const discord = (tfDiscord && tfDiscord.value.trim()) || '';
 
-    const letter = `Greetings State 266 Council & Leadership!
+    let letter = `Greetings State 266 Council & Leadership!
 
 I would like to apply for State Transfer to State 266:
 • In-Game Name: ${name}
-• Total Power: ${power}
+• Current State: ${originState}
+• Current Alliance: ${curAlliance}
+• Target Alliance: ${targetAlliance}
 • Furnace Level: ${furnace}
-• Preferred Alliance: ${alliance}
+• Total Power: ${power}
 • Spoken Language: ${lang}
-• Active Timezone: ${tz}
-• Playstyle: Highly active, SvS Prep committed, Sunfire & Bear trap participant. Respects NAP-3 & state rules.
+• Active Timezone: ${tz}`;
+
+    if (discord) {
+      letter += `\n• Discord Handle: ${discord}`;
+    }
+
+    letter += `\n• Playstyle: Highly active, SvS Prep committed, Sunfire & Bear trap participant. Respects NAP-3 & state rules.
 
 Looking forward to fighting alongside State 266! Thank you!`;
 
     tfOutput.textContent = letter;
   }
 
-  [tfName, tfPower, tfFurnace, tfAlliance, tfLang, tfTz].forEach(el => {
+  [tfName, tfOriginState, tfCurrentAlliance, tfAlliance, tfFurnace, tfPower, tfLang, tfTz, tfDiscord].forEach(el => {
     if (el) {
       el.addEventListener('input', updateTransferLetter);
       el.addEventListener('change', updateTransferLetter);
@@ -430,6 +447,114 @@ Looking forward to fighting alongside State 266! Thank you!`;
     btnCopyTf.addEventListener('click', () => {
       if (tfOutput) {
         window.copyText(tfOutput.textContent, 'Transfer Application Copied! Send via Discord / In-Game Mail');
+      }
+    });
+  }
+
+  if (btnSendDiscord) {
+    btnSendDiscord.addEventListener('click', async () => {
+      const name = (tfName && tfName.value.trim()) || '';
+      const originState = (tfOriginState && tfOriginState.value.trim()) || '';
+      const curAlliance = (tfCurrentAlliance && tfCurrentAlliance.value.trim()) || '';
+      const targetAlliance = (tfAlliance && tfAlliance.value) || 'Any Top 3 (AVM / SOK / ORA)';
+      const furnace = (tfFurnace && tfFurnace.value) || 'FC 5';
+      const power = (tfPower && tfPower.value.trim()) || '';
+      const lang = (tfLang && tfLang.value.trim()) || 'English';
+      const tz = (tfTz && tfTz.value.trim()) || 'UTC+0';
+      const discord = (tfDiscord && tfDiscord.value.trim()) || '';
+
+      if (!name) {
+        if (tfStatusMsg) {
+          tfStatusMsg.className = 'transfer-status-msg error';
+          tfStatusMsg.style.display = 'flex';
+          tfStatusMsg.textContent = '⚠️ Please enter your In-Game Name before submitting.';
+        }
+        if (tfName) tfName.focus();
+        return;
+      }
+
+      if (!originState) {
+        if (tfStatusMsg) {
+          tfStatusMsg.className = 'transfer-status-msg error';
+          tfStatusMsg.style.display = 'flex';
+          tfStatusMsg.textContent = '⚠️ Please specify your Current State # (e.g. 150).';
+        }
+        if (tfOriginState) tfOriginState.focus();
+        return;
+      }
+
+      btnSendDiscord.disabled = true;
+      const originalText = btnSendDiscord.innerHTML;
+      btnSendDiscord.innerHTML = '<span>📡 Sending to Discord...</span>';
+
+      if (tfStatusMsg) {
+        tfStatusMsg.className = 'transfer-status-msg loading';
+        tfStatusMsg.style.display = 'flex';
+        tfStatusMsg.textContent = 'Transmitting your application to State 266 Discord...';
+      }
+
+      const payload = {
+        username: 'State 266 Transfer Desk',
+        avatar_url: 'https://zcross091.github.io/StateWeb/assets/images/state266_logo.jpg',
+        embeds: [
+          {
+            title: '📥 State Transfer Application',
+            description: `**${name}** has submitted an application to transfer to **State 266**.`,
+            color: 5793266, // Sleek Discord blurple #5865F2
+            fields: [
+              { name: '👤 In-Game Name', value: name, inline: true },
+              { name: '🌍 Current State', value: originState.startsWith('State') ? originState : `State ${originState}`, inline: true },
+              { name: '🛡️ Target Alliance', value: targetAlliance, inline: true },
+              { name: '🏷️ Current Alliance', value: curAlliance || 'None / Solo', inline: true },
+              { name: '🏰 Furnace Level', value: furnace, inline: true },
+              { name: '⚡ Total Power', value: power || 'Not specified', inline: true },
+              { name: '🌐 Language / Timezone', value: `${lang} • ${tz}`, inline: true },
+              { name: '💬 Discord Handle', value: discord || 'Not provided', inline: true }
+            ],
+            footer: {
+              text: 'State 266 Official Portal'
+            },
+            timestamp: new Date().toISOString()
+          }
+        ]
+      };
+
+      try {
+        const response = await fetch(DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          btnSendDiscord.innerHTML = '<span>✅ Application Sent!</span>';
+          if (tfStatusMsg) {
+            tfStatusMsg.className = 'transfer-status-msg success';
+            tfStatusMsg.style.display = 'flex';
+            tfStatusMsg.textContent = '✅ Application sent successfully to our Discord channel! The leadership team will review it.';
+          }
+          if (typeof window.showToast === 'function') {
+            window.showToast('Application sent to State 266 Discord!');
+          }
+
+          setTimeout(() => {
+            btnSendDiscord.disabled = false;
+            btnSendDiscord.innerHTML = originalText;
+          }, 6000);
+        } else {
+          throw new Error(`Server returned HTTP ${response.status}`);
+        }
+      } catch (err) {
+        console.error('Discord webhook error:', err);
+        btnSendDiscord.disabled = false;
+        btnSendDiscord.innerHTML = originalText;
+        if (tfStatusMsg) {
+          tfStatusMsg.className = 'transfer-status-msg error';
+          tfStatusMsg.style.display = 'flex';
+          tfStatusMsg.textContent = '⚠️ Could not send to Discord directly. Please use "Copy Application Letter" below to send manually.';
+        }
       }
     });
   }
