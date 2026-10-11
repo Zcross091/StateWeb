@@ -281,24 +281,7 @@
     });
   }
 
-  // --- 4. TITLE REQUEST HELPER ---
-  const titleNameInput = document.getElementById('title-char-name');
-  const titleTypeSelect = document.getElementById('title-type');
-  const titleCoordsInput = document.getElementById('title-coords');
-  const btnGenerateTitle = document.getElementById('btn-copy-title-req');
-
-  if (btnGenerateTitle) {
-    btnGenerateTitle.addEventListener('click', () => {
-      const name = titleNameInput ? titleNameInput.value.trim() : 'Survivor';
-      const title = titleTypeSelect ? titleTypeSelect.value : 'Interior (Construction +10%)';
-      const coords = titleCoordsInput ? titleCoordsInput.value.trim() : 'X:500 Y:500';
-
-      const requestText = `[TITLE REQUEST] Name: ${name || 'Survivor'} | Coords: ${coords || 'HQ'} | Requesting: ${title} | State: #266 | Thank you President!`;
-      window.copyText(requestText, 'Title Request Copied! Paste into World/State Chat');
-    });
-  }
-
-  // --- 5. ENDEAVOUR'S SURVIVAL ACADEMY (GUIDES FILTER) ---
+  // --- 4. ENDEAVOUR'S SURVIVAL ACADEMY (GUIDES FILTER) ---
   const filterBtns = document.querySelectorAll('.academy-filter-bar .filter-btn');
   const guideCards = document.querySelectorAll('.guides-grid .guide-card');
 
