@@ -8,9 +8,13 @@
 ---
 
 ## 🏔️ About State 266 & Endeavour
-- **In-Game Figurehead:** **Endeavour**
-- **Credentials:** Seasoned veteran player known throughout older states, former official **Whiteout Survival Discord Moderator**, dedicated coach who trained newcomers for over a year before retiring from mod duties.
-- **Home Realm:** **State 266** — A disciplined, high-power state with over **154.4 Billion Power** across the top coalition, protected by a mutual **NAP-3** non-aggression agreement.
+- **In-Game Name:** `[AVM] ༒ Endeavour ༒`
+- **Player ID:** `16278053`
+- **Combat Stats:** **942.5M Power** • **157.5M PvP Kills**
+- **Furnace Level:** **Fire Crystal 10 (FC 10 - Apex Tier)**
+- **Server Heritage:** **Initial State: State 91** (Original launch server veteran) → Transferred to **State 266**
+- **Roles:** Leader in **`[AVM] Shadow Wolves`**, former official **Whiteout Survival Discord Moderator**, dedicated coach who trained newcomers for over a year before retiring from mod duties.
+- **Home Realm:** **State 266** — A disciplined, high-power realm with over **154.4 Billion Power** across the top coalition, protected by a mutual **NAP-3** non-aggression agreement.
 
 ---
 

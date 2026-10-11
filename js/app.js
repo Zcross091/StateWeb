@@ -336,7 +336,9 @@
     5: { fc: 3300, refined: 0 },
     6: { fc: 4800, refined: 80 },
     7: { fc: 6900, refined: 150 },
-    8: { fc: 9800, refined: 260 }
+    8: { fc: 9800, refined: 260 },
+    9: { fc: 13500, refined: 420 },
+    10: { fc: 18500, refined: 650 }
   };
 
   function calculateFC() {

@@ -728,6 +728,213 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
+   AUTHENTIC IN-GAME PLAYER PROFILE CARD REPLICA
+   ========================================================================== */
+.profile-card-replica {
+  background: linear-gradient(135deg, #1c264a 0%, #111a33 100%);
+  border: 2px solid #364875;
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.replica-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.replica-frame-wrap {
+  position: relative;
+  width: 104px;
+  height: 104px;
+}
+
+.replica-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 2px solid #8b5cf6;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.replica-frame-decor {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #f97316;
+  border-radius: 18px;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+}
+
+.decor-pumpkin {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-size: 1.35rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+.decor-pot {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-size: 1.15rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+.decor-broom {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: 1.15rem;
+}
+
+.replica-title-badge {
+  background: linear-gradient(180deg, #1e3a6a 0%, #0d1e3a 100%);
+  border: 1px solid #38bdf8;
+  color: #fbbf24;
+  border-radius: var(--radius-full);
+  font-family: var(--font-tactical);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.replica-stamina-bar {
+  background: #16a34a;
+  border: 1px solid #22c55e;
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  font-family: var(--font-tactical);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  margin-top: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.replica-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.replica-name-bar {
+  background: rgba(14, 25, 48, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.replica-player-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.replica-id-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+}
+
+.btn-mini-copy {
+  background: transparent;
+  border: none;
+  color: #38bdf8;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.25rem;
+  transition: transform 0.15s;
+}
+
+.btn-mini-copy:hover {
+  transform: scale(1.2);
+}
+
+.replica-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 1rem;
+  font-size: 0.88rem;
+}
+
+.replica-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e2e8f0;
+}
+
+.replica-stat-val {
+  font-weight: 800;
+  font-family: var(--font-tactical);
+  font-size: 1rem;
+}
+
+.replica-furnace-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+  border: 2px solid #ef4444;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #ffffff;
+  font-family: var(--font-tactical);
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+.replica-initial-state-pill {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1.25rem;
+  background: rgba(14, 25, 48, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #93c5fd;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-family: var(--font-tactical);
+  padding: 0.15rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ==========================================================================
    THE BIG 3 ALLIANCES SECTION (AVM, SOK, ORA)
    ========================================================================== */
 .alliances-section {
