@@ -2100,3 +2100,66 @@ h1, h2, h3, h4, h5 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Discord Webhook Button & Status Message */
+.btn-discord {
+  background: linear-gradient(135deg, #5865f2 0%, #4752c4 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 18px rgba(88, 101, 242, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-tactical);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.btn-discord:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6875f5 0%, #5865f2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(88, 101, 242, 0.65);
+}
+
+.btn-discord:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.transfer-status-msg {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.transfer-status-msg.success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  color: #6ee7b7;
+}
+
+.transfer-status-msg.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+.transfer-status-msg.loading {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid #3b82f6;
+  color: #93c5fd;
+}
