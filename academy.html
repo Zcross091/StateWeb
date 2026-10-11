@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endeavour's Survival Academy | State 266 Guides & Strategies</title>
+  
+  <meta name="description" content="Master Whiteout Survival with Endeavour's veteran guides. Comprehensive strategies for Bear Trap multipliers, Fire Crystal FC1-FC10 roadmap, SvS prep hoarding, and hero gear.">
+  <meta name="keywords" content="Whiteout Survival Academy, Endeavour guides, Bear Trap strategy, Fire Crystal roadmap, SvS Prep points, hero formations">
+  <meta property="og:title" content="Endeavour's Survival Academy | State 266">
+  <meta property="og:description" content="Battle-tested Whiteout Survival guides by former WOS Discord Mod and State 91 veteran Endeavour.">
+  <meta property="og:image" content="assets/images/hero_state266.jpg">
+
+  <link rel="icon" type="image/jpeg" href="assets/images/state266_logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Particle Canvas -->
+  <canvas id="snow-canvas"></canvas>
+  <div class="top-glow-arc"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wrap" id="nav-brand">
+        <img src="assets/images/state266_logo.jpg" alt="State 266 Crest" class="brand-logo" width="46" height="46">
+        <div class="brand-text-block">
+          <span class="brand-title">STATE 266</span>
+          <span class="brand-subtitle">THE FROZEN BASTION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#mentor" class="nav-link">Endeavour</a></li>
+          <li><a href="index.html#alliances" class="nav-link">The Big 3</a></li>
+          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
+          <li><a href="index.html#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="academy.html" class="nav-link active">Academy</a></li>
+          <li><a href="calculators.html" class="nav-link">Calculators</a></li>
+          <li><a href="transfer.html" class="nav-link">Transfer</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="utc-clock-badge" title="Live Server Time">
+          <span class="utc-dot"></span>
+          <span id="utc-clock-time">00:00:00 UTC</span>
+        </div>
+        <button class="btn-icon-control active" id="btn-toggle-snow" title="Toggle Snow Particles" aria-label="Toggle snow animation">❄️</button>
+        <button class="btn-icon-control" id="btn-toggle-audio" title="Toggle Ambient Audio" aria-label="Toggle audio">🔊</button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">State 266</a>
+        <span class="breadcrumb-sep">/</span>
+        <span style="color: #ffffff;">Survival Academy</span>
+      </div>
+
+      <span class="section-eyebrow" style="margin-bottom: 0.75rem;">Veteran Knowledge Vault</span>
+      <h1 class="subpage-title">Endeavour's Survival Academy</h1>
+      <p class="subpage-lead">
+        Distilled wisdom from <strong>[AVM] ༒ Endeavour ༒</strong> (State 91 Launch Veteran • Former Official WOS DC Moderator • 1+ Year Newbie Coach • FC 10). Engineered to elevate every survivor in State 266.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="search-bar-wrap">
+        <span class="search-icon-inside">🔍</span>
+        <input type="text" id="academy-search-input" class="search-input-field" placeholder="Search guides by keyword (e.g. Bear Trap, Jessie, FC10, SvS, Gear, Hospital)...">
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="academy-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Guides (8)</button>
+        <button class="filter-btn" data-filter="combat">🐻 Bear Trap & Combat</button>
+        <button class="filter-btn" data-filter="heroes">🛡️ Hero Synergy & Gear</button>
+        <button class="filter-btn" data-filter="furnace">🔥 Furnace & FC Roadmap</button>
+        <button class="filter-btn" data-filter="svs">🏆 SvS Prep & Defense</button>
+        <button class="filter-btn" data-filter="events">⚔️ Crazy Joe & Foundry</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES GRID -->
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 6rem;">
+    <div class="guides-grid" id="academy-guides-container">
+
+      <!-- GUIDE 1 -->
+      <article class="guide-card" data-category="combat">
+        <span class="guide-category-tag">⚔️ Bear Trap Combat</span>
+        <h3 class="guide-title">Bear Trap Multiplier Formula: Max Damage Breakdown</h3>
+        <p class="guide-excerpt">
+          The difference between 20M damage and 150M+ damage in Bear Trap isn't just power—it is rally leader buff stacking and joiner hero selection.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Joiner Heroes:</strong> Only send <strong>Jessie</strong> (first skill gives up to +25% total damage), <strong>Jeronimo</strong> (+15% attack), <strong>Seo-yoon</strong> (+10% attack), or <strong>Mia</strong> (+10% damage).</li>
+            <li><strong>Defensive Mistake:</strong> NEVER send Sergey, Flint, or Patrick as joiner leads—their skills buff HP/DEF, adding ZERO damage to the bear!</li>
+            <li><strong>Troop Ratio:</strong> Optimal layout is 10% Infantry, 10% Lancer, 80% Marksman (or 20/20/60 if your Marksmen are depleted).</li>
+            <li><strong>Leader Rotation:</strong> Ensure your top 4 rally callers have the highest Lethality gear and maxed Chief combat skills.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 2 -->
+      <article class="guide-card" data-category="furnace">
+        <span class="guide-category-tag">🔥 Furnace Evolution</span>
+        <h3 class="guide-title">Fire Crystal Roadmap: From FC1 to FC10</h3>
+        <p class="guide-excerpt">
+          Fire Crystals are the scarcest commodity after reaching Furnace 30. How you allocate crystals dictates your progression speed and combat survivability.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Priority 1 - Furnace:</strong> Always complete the Furnace first to unlock max troop capacity and the next camp tier.</li>
+            <li><strong>Priority 2 - Camps:</strong> Infantry Camp first (unbreakable meatshields), followed by Marksman Camp (main DPS), then Lancer Camp.</li>
+            <li><strong>Infirmary & Tech:</strong> Upgrade auxiliary buildings only after core combat camps reach parity.</li>
+            <li><strong>SvS Hoarding:</strong> Never press upgrade buttons during regular peacetime weeks—hoard Fire Crystals for SvS Preparation Phase Day 4/5.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 3 -->
+      <article class="guide-card" data-category="svs">
+        <span class="guide-category-tag">🏆 State vs State</span>
+        <h3 class="guide-title">SvS Prep Phase: How to Score 10M+ Points</h3>
+        <p class="guide-excerpt">
+          Winning SvS begins 6 days prior to the Sunfire castle conquest. The preparation leaderboard determines castle buffs and state morale.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Day 1 - Chief Gear & Charms:</strong> Save all Hardened Alloy and Polishing Solution exclusively for this 24-hour cycle.</li>
+            <li><strong>Day 2 - Hero Shards:</strong> Hoard general mythic shards, hero recruitment keys, and arena rewards for Day 2.</li>
+            <li><strong>Day 3 - Pet Enhancements:</strong> Save all pet food and evolution marks for maximum point multipliers.</li>
+            <li><strong>Day 4 & 5 - Speedups:</strong> Request Minister of Interior (Construction +10%) or Defense (Training +10%) buffs before burning long speedups.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 4 -->
+      <article class="guide-card" data-category="heroes">
+        <span class="guide-category-tag">🛡️ Team Building</span>
+        <h3 class="guide-title">Hero Synergy & Gear Formations (Gen 1 to Gen 5+)</h3>
+        <p class="guide-excerpt">
+          Hero gear stat priority: Lethality > Health > Attack > Defense. How to build unbreakable frontlines and lethal rally leads.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Infantry Line:</strong> Sergey & Flint (early anchors) → Ahmose / Hector (late game). Prioritize Health & Defense gear on Infantry.</li>
+            <li><strong>Lancer Line:</strong> Molly & Philly → Mia / Lynn. Prioritize Lethality and Attack gear.</li>
+            <li><strong>Marksman Line:</strong> Alonso & Greg → Wayne / Reina. The primary DPS carry of every combat encounter.</li>
+            <li><strong>Gear Mastery:</strong> Reforge hero gear with Mythic stones to unlock set bonuses (+15% rally lethality).</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 5 -->
+      <article class="guide-card" data-category="svs">
+        <span class="guide-category-tag">🛡️ Defense Protocol</span>
+        <h3 class="guide-title">Zero-Loss City Defense & Hospital Management</h3>
+        <p class="guide-excerpt">
+          How to safeguard your army during cross-state warfare and prevent permanent casualty death into the enlistment office.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>24h Shield Discipline:</strong> Activate a 24-hour peace shield before 00:00 UTC on SvS Battle day unless actively garrisoning.</li>
+            <li><strong>70% Hospital Buffer:</strong> Keep at least 30% of infirmary beds unoccupied so that unexpected hits never result in dead troops.</li>
+            <li><strong>Reinforcement Etiquette:</strong> Never reinforce a teammate unless they have designated high-stat garrison captains.</li>
+            <li><strong>Safe Ghost Rallies:</strong> If attacked without a shield, launch 8-hour rallies on distant Barbarian Camps to protect troops.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 6 -->
+      <article class="guide-card" data-category="furnace">
+        <span class="guide-category-tag">💰 Economic Growth</span>
+        <h3 class="guide-title">Economy & Farm Account Architecture</h3>
+        <p class="guide-excerpt">
+          Mastering resource balance: Steel, Coal, Meat, and Wood. How top players run farm accounts to fuel endless high-tier upgrades.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Farm City Positioning:</strong> Cluster farm accounts near alliance border territories for fast, safe gathering marches.</li>
+            <li><strong>Research Specialization:</strong> Maximize Growth Tech trees first (Engineering and Mathematics) before branching to military.</li>
+            <li><strong>Arena of Glory:</strong> Complete 5 daily battles every single day to purchase essential Hero Gear Enhancement Stones.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 7 -->
+      <article class="guide-card" data-category="events">
+        <span class="guide-category-tag">🧟 Barbarian Defense</span>
+        <h3 class="guide-title">Crazy Joe Defense: Max Point Strategy</h3>
+        <p class="guide-excerpt">
+          How to place in the top 3 on the state leaderboard during the 20-wave Crazy Joe barbarian assault.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Empty Your City:</strong> Send all your troops out to reinforce online and offline alliance members.</li>
+            <li><strong>HQ Garrison:</strong> Station a high-capacity defense lead in the Alliance HQ during Waves 10, 14, and 20.</li>
+            <li><strong>Hero Deployment:</strong> Send Patrick and Sergey to teammates' cities to grant them defensive recovery buffs.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GUIDE 8 -->
+      <article class="guide-card" data-category="events">
+        <span class="guide-category-tag">⚒️ Tactical Tournaments</span>
+        <h3 class="guide-title">Foundry Battle & Canyon Clash Playbook</h3>
+        <p class="guide-excerpt">
+          Synchronized movement and capture priority for 20v20 alliance combat in Foundry Battle and Canyon Clash.
+        </p>
+        <div class="guide-key-points">
+          <ul>
+            <li><strong>Target Priority:</strong> Rush Munitions Factory and Repair Shop first. Control center teleporters early.</li>
+            <li><strong>Teleport Relocation:</strong> Conserve advanced teleports for decisive contested building clashes.</li>
+            <li><strong>Communication:</strong> Appoint 1 rally lead and 1 callout officer on Discord voice for zero-delay reaction.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/state266_logo.jpg" alt="State 266" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-bright);">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #ffffff;">STATE 266</span>
+          </div>
+          <p>
+            The Frozen Bastion — Official realm portal for Whiteout Survival State 266. Dedicated to Endeavour & the State 266 Council.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>The Big 3</h5>
+          <ul>
+            <li><a href="index.html#card-avm">[AVM] Shadow Wolves</a></li>
+            <li><a href="index.html#card-sok">[SOK] SilenceOfKittens</a></li>
+            <li><a href="index.html#card-ora">[ORA] OriginDesAstres</a></li>
+            <li><a href="rules.html">NAP-3 Concordat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academy & Tools</h5>
+          <ul>
+            <li><a href="academy.html">Endeavour's Academy</a></li>
+            <li><a href="index.html#timetable">Event Timetable & UTC</a></li>
+            <li><a href="calculators.html">Fire Crystal Calculator</a></li>
+            <li><a href="calculators.html">SvS Speedup Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>State 266 Hub</h5>
+          <ul>
+            <li><a href="transfer.html">State Transfer Application</a></li>
+            <li><a href="rules.html">Minister Title Helper</a></li>
+            <li><a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="index.html">Back to Home ↑</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Whiteout Survival State 266 Community Portal. Dedicated to <strong>Endeavour</strong>.
+        </div>
+        <div>
+          Published on <a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener" style="color: var(--frost-cyan); text-decoration: none;">GitHub: Zcross091/StateWeb</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-notice" id="toast-notice">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <script src="js/snow.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Live Search Filter for Academy
+    const searchInput = document.getElementById('academy-search-input');
+    const cards = document.querySelectorAll('#academy-guides-container .guide-card');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (!query || text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

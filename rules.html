@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State 266 Concordat & NAP-3 Rules | Whiteout Survival</title>
+  
+  <meta name="description" content="Official State 266 Constitution, NAP-3 Non-Aggression Pact, Sunfire Castle Rotation, Tile Gathering Rules, and Minister Title Request Generator.">
+  <meta name="keywords" content="Whiteout Survival State 266, NAP 3 rules, Sunfire Castle, tile hitting rules, Minister title request, State Concordat">
+  <meta property="og:title" content="State 266 Concordat & NAP-3 Rules">
+  <meta property="og:description" content="Constitutional treaties and state laws binding AVM, SOK, and ORA in State 266.">
+  <meta property="og:image" content="assets/images/hero_state266.jpg">
+
+  <link rel="icon" type="image/jpeg" href="assets/images/state266_logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Particle Canvas -->
+  <canvas id="snow-canvas"></canvas>
+  <div class="top-glow-arc"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wrap" id="nav-brand">
+        <img src="assets/images/state266_logo.jpg" alt="State 266 Crest" class="brand-logo" width="46" height="46">
+        <div class="brand-text-block">
+          <span class="brand-title">STATE 266</span>
+          <span class="brand-subtitle">THE FROZEN BASTION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#mentor" class="nav-link">Endeavour</a></li>
+          <li><a href="index.html#alliances" class="nav-link">The Big 3</a></li>
+          <li><a href="rules.html" class="nav-link active">Rules & NAP</a></li>
+          <li><a href="index.html#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="academy.html" class="nav-link">Academy</a></li>
+          <li><a href="calculators.html" class="nav-link">Calculators</a></li>
+          <li><a href="transfer.html" class="nav-link">Transfer</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="utc-clock-badge" title="Live Server Time">
+          <span class="utc-dot"></span>
+          <span id="utc-clock-time">00:00:00 UTC</span>
+        </div>
+        <button class="btn-icon-control active" id="btn-toggle-snow" title="Toggle Snow Particles" aria-label="Toggle snow animation">❄️</button>
+        <button class="btn-icon-control" id="btn-toggle-audio" title="Toggle Ambient Audio" aria-label="Toggle audio">🔊</button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">State 266</a>
+        <span class="breadcrumb-sep">/</span>
+        <span style="color: #ffffff;">Rules & NAP Codex</span>
+      </div>
+
+      <span class="section-eyebrow" style="margin-bottom: 0.75rem;">State Law & Governance</span>
+      <h1 class="subpage-title">The State 266 Concordat</h1>
+      <p class="subpage-lead">
+        The binding constitutional codex established and enforced by <strong>[AVM]</strong>, <strong>[SOK]</strong>, and <strong>[ORA]</strong>. Ensuring domestic stability, fair resource access, and total state readiness for SvS.
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <span class="tag-credential veteran">📜 NAP-3 Enforced</span>
+        <span class="tag-credential" style="background: rgba(16, 185, 129, 0.15); border-color: #10b981; color: #34d399;">🌾 Zero Tile Hitting</span>
+        <span class="tag-credential mod">👑 Fair Castle Rotation</span>
+        <span class="tag-credential" style="background: rgba(239, 68, 68, 0.15); border-color: #ef4444; color: #f87171;">⚔️ Unified SvS Command</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN ARTICLES CODEX -->
+  <main class="container" style="padding-top: 4rem; padding-bottom: 5rem;">
+    
+    <!-- ARTICLE I -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE I • THE NON-AGGRESSION PACT (NAP-3)</div>
+        <div class="article-enforcement-pill">STRICTLY ENFORCED</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>1.1 Mutual Peace Between Top Coalitions:</strong></p>
+        <p>
+          All members carrying the alliance tags <strong>[AVM]</strong>, <strong>[SOK]</strong>, or <strong>[ORA]</strong> are protected by an absolute Non-Aggression Pact. Unprovoked attacks, scouting runs with aggressive intent, rallies, or city burns against any member belonging to these alliances are strictly forbidden under all circumstances.
+        </p>
+        <p style="margin-top: 1rem;"><strong>1.2 Alliance Territorial Boundaries:</strong></p>
+        <p>
+          Each alliance's Headquarters (HQ) and banner territories are sovereign. No alliance may place banners that intentionally sever or encircle another signatory's expansion path. Resource nodes located within an alliance's bordered territory belong primarily to that alliance's citizens.
+        </p>
+      </div>
+    </article>
+
+    <!-- ARTICLE II -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE II • RESOURCE GATHERING & TILE PROTECTION</div>
+        <div class="article-enforcement-pill">ZERO TOLERANCE</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>2.1 Zero Tile Hitting:</strong></p>
+        <p>
+          Resource gathering nodes (Meat, Wood, Coal, Iron) across all provinces are <strong>100% sacred</strong> for all players in State 266. Attacking a player while they are gathering on a resource tile is treated as an act of war against the state.
+        </p>
+        <p style="margin-top: 1rem;"><strong>2.2 March Collision Etiquette:</strong></p>
+        <p>
+          In the event that two players march to the same unoccupied node simultaneously, the player whose march departed second or arrives second is obligated to immediately recall their troops. If an accidental tile hit occurs due to latency, the offending player must apologize in chat and compensate any lost resources.
+        </p>
+      </div>
+    </article>
+
+    <!-- ARTICLE III -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE III • SUNFIRE CASTLE & PRESIDENCY ROTATION</div>
+        <div class="article-enforcement-pill">DEMOCRATIC CONSENSUS</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>3.1 Alternating Presidency:</strong></p>
+        <p>
+          The control of Sunfire Castle and the appointment of the State President rotates fairly between <strong>[AVM]</strong>, <strong>[SOK]</strong>, and <strong>[ORA]</strong>. This guarantees that all three alliances share the benefits of the Presidency, castle buffs, and honorary reward chests.
+        </p>
+        <p style="margin-top: 1rem;"><strong>3.2 24/7 Minister Title Service:</strong></p>
+        <p>
+          The reigning President must maintain active title distributors to grant Minister buffs (Interior for Construction speed, Strategy for Research speed, Defense for Training speed) to any citizen of State 266 upon request. Maximum title holding duration is <strong>15 minutes</strong> during busy periods to ensure smooth queue turnover.
+        </p>
+      </div>
+    </article>
+
+    <!-- ARTICLE IV -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE IV • BROTHERS IN ARMS / KILL EVENT (KE) PROTOCOL</div>
+        <div class="article-enforcement-pill warning">RESTRICTED COMBAT</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>4.1 NAP Protection Remains Absolute:</strong></p>
+        <p>
+          During the regular bi-weekly 'Brothers in Arms' event, NAP-3 protections remain fully active. Members of AVM, SOK, and ORA may not attack each other under the pretext of earning event points.
+        </p>
+        <p style="margin-top: 1rem;"><strong>4.2 Safe Farming Targets:</strong></p>
+        <p>
+          Players may only hit untagged, inactive farm cities with prior scout verification. Multiple consecutive hits that exceed hospital capacity and result in permanent troop deaths are strictly banned.
+        </p>
+      </div>
+    </article>
+
+    <!-- ARTICLE V -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE V • STATE VS STATE (SvS) WAR MOBILIZATION</div>
+        <div class="article-enforcement-pill">TOTAL WAR PROTOCOL</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>5.1 Unified State Council:</strong></p>
+        <p>
+          When State 266 is matched against an enemy server in the State vs State (SvS) tournament, all domestic rivalries are suspended. The leaders and seasoned veterans (including Endeavour, Duke Ragnar, TrulyBee, and LululaKastagne) form the unified State War Council.
+        </p>
+        <p style="margin-top: 1rem;"><strong>5.2 Turret & Castle Defense:</strong></p>
+        <p>
+          All 3 alliances coordinate garrison shifts to hold the Sunfire Castle and 4 Sunfire Turrets. Players with the highest Lethality and Health hero gear take point as garrison captains. Lower-power players reinforce strictly with tier-appropriate troops under captain command.
+        </p>
+      </div>
+    </article>
+
+    <!-- ARTICLE VI -->
+    <article class="article-codex-card">
+      <div class="article-header">
+        <div class="article-badge-roman">ARTICLE VI • ARBITRATION & ROGUE DESIGNATION</div>
+        <div class="article-enforcement-pill warning">DISCIPLINARY CODES</div>
+      </div>
+      <div class="rule-body" style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.8;">
+        <p><strong>6.1 Resolution Procedure:</strong></p>
+        <p>
+          1. <em>Direct Settlement:</em> Contact the player or their alliance R4 officer directly with battle report screenshots.<br>
+          2. <em>Council Hearing:</em> If unresolved, present evidence to the State 266 Council.<br>
+          3. <em>Rogue Outlaw Status:</em> Any player who repeatedly attacks tiles, burns NAP cities, or refuses council rulings will be formally declared a <strong>State Rogue</strong>. Rogues forfeit all NAP protection and are zeroed on sight by all 3 alliances.
+        </p>
+      </div>
+    </article>
+
+    <!-- INTERACTIVE TITLE GENERATOR -->
+    <section class="title-helper-card" style="margin-top: 3.5rem;">
+      <div class="title-helper-info">
+        <h4>📜 Official Minister Title Request Generator</h4>
+        <p>
+          Need a title buff from the President? Fill in your details below and click Copy to generate the official chat request recognized by State 266 ministers in World Chat.
+        </p>
+      </div>
+
+      <div class="title-generator-controls">
+        <input type="text" id="title-char-name" class="input-field" placeholder="Your In-Game Survivor Name">
+        <select id="title-type" class="input-field">
+          <option value="Interior (Construction +10%)">🏛️ Minister of Interior (Construction Speed +10%)</option>
+          <option value="Strategy (Research +10%)">🔬 Minister of Strategy (Research Speed +10%)</option>
+          <option value="Defense (Training +10%)">⚔️ Minister of Defense (Troop Training +10%)</option>
+          <option value="Justice (Gathering +15%)">🌾 Minister of Justice (Resource Gathering +15%)</option>
+        </select>
+        <input type="text" id="title-coords" class="input-field" placeholder="City Coordinates (e.g. #266 X:520 Y:640)">
+        <button class="btn btn-primary" id="btn-copy-title-req">
+          📋 Generate & Copy Title Request
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/state266_logo.jpg" alt="State 266" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-bright);">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #ffffff;">STATE 266</span>
+          </div>
+          <p>
+            The Frozen Bastion — Official realm portal for Whiteout Survival State 266. Dedicated to Endeavour & the State 266 Council.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>The Big 3</h5>
+          <ul>
+            <li><a href="index.html#card-avm">[AVM] Shadow Wolves</a></li>
+            <li><a href="index.html#card-sok">[SOK] SilenceOfKittens</a></li>
+            <li><a href="index.html#card-ora">[ORA] OriginDesAstres</a></li>
+            <li><a href="rules.html">NAP-3 Concordat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academy & Tools</h5>
+          <ul>
+            <li><a href="academy.html">Endeavour's Academy</a></li>
+            <li><a href="index.html#timetable">Event Timetable & UTC</a></li>
+            <li><a href="calculators.html">Fire Crystal Calculator</a></li>
+            <li><a href="calculators.html">SvS Speedup Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>State 266 Hub</h5>
+          <ul>
+            <li><a href="transfer.html">State Transfer Application</a></li>
+            <li><a href="rules.html">Minister Title Helper</a></li>
+            <li><a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="index.html">Back to Home ↑</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Whiteout Survival State 266 Community Portal. Dedicated to <strong>Endeavour</strong>.
+        </div>
+        <div>
+          Published on <a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener" style="color: var(--frost-cyan); text-decoration: none;">GitHub: Zcross091/StateWeb</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-notice" id="toast-notice">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <script src="js/snow.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

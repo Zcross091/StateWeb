@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State 266 Tactical Calculators | Whiteout Survival</title>
+  
+  <meta name="description" content="Official Whiteout Survival State 266 calculators: Fire Crystal FC1-FC10 requirements, SvS speedup prep points estimator, troop training speed calculator, and stamina efficiency tool.">
+  <meta name="keywords" content="Whiteout Survival calculator, Fire Crystal calculator FC10, SvS speedup points, troop training calculator, stamina planner">
+  <meta property="og:title" content="State 266 Tactical Calculators">
+  <meta property="og:description" content="Calculate Fire Crystals up to FC10, SvS Prep points, and troop training speedups for Whiteout Survival.">
+  <meta property="og:image" content="assets/images/hero_state266.jpg">
+
+  <link rel="icon" type="image/jpeg" href="assets/images/state266_logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Particle Canvas -->
+  <canvas id="snow-canvas"></canvas>
+  <div class="top-glow-arc"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wrap" id="nav-brand">
+        <img src="assets/images/state266_logo.jpg" alt="State 266 Crest" class="brand-logo" width="46" height="46">
+        <div class="brand-text-block">
+          <span class="brand-title">STATE 266</span>
+          <span class="brand-subtitle">THE FROZEN BASTION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#mentor" class="nav-link">Endeavour</a></li>
+          <li><a href="index.html#alliances" class="nav-link">The Big 3</a></li>
+          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
+          <li><a href="index.html#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="academy.html" class="nav-link">Academy</a></li>
+          <li><a href="calculators.html" class="nav-link active">Calculators</a></li>
+          <li><a href="transfer.html" class="nav-link">Transfer</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="utc-clock-badge" title="Live Server Time">
+          <span class="utc-dot"></span>
+          <span id="utc-clock-time">00:00:00 UTC</span>
+        </div>
+        <button class="btn-icon-control active" id="btn-toggle-snow" title="Toggle Snow Particles" aria-label="Toggle snow animation">❄️</button>
+        <button class="btn-icon-control" id="btn-toggle-audio" title="Toggle Ambient Audio" aria-label="Toggle audio">🔊</button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">State 266</a>
+        <span class="breadcrumb-sep">/</span>
+        <span style="color: #ffffff;">Calculators & Tools</span>
+      </div>
+
+      <span class="section-eyebrow" style="margin-bottom: 0.75rem;">Tactical Utilities</span>
+      <h1 class="subpage-title">State 266 Tactical Calculators</h1>
+      <p class="subpage-lead">
+        Engineered for precision and efficiency. Calculate required Fire Crystals up to <strong>FC 10 (Endeavour Tier)</strong>, preview SvS Preparation points, and optimize troop training batches.
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <span class="tag-credential veteran">🔥 FC1 to FC10 Support</span>
+        <span class="tag-credential" style="background: rgba(56, 189, 248, 0.15); border-color: #38bdf8; color: #7dd3fc;">⚡ SvS 30 Pts/Min Rate</span>
+        <span class="tag-credential" style="background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; color: #fbbf24;">⚔️ Training & Stamina Tools</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATORS SUITE -->
+  <main class="container" style="padding-top: 4rem; padding-bottom: 6rem;">
+    <div class="calc-suite-grid">
+
+      <!-- TOOL 1: FIRE CRYSTAL CALCULATOR -->
+      <div class="calculator-card" style="display: flex; flex-direction: column;">
+        <div class="calc-title">
+          <span>🔥</span>
+          <span>Fire Crystal (FC) Calculator</span>
+        </div>
+        <p class="calc-desc">Calculate total Fire Crystals and Refined Crystals required to reach your target furnace tier.</p>
+
+        <div class="calc-inputs-row">
+          <div class="form-group">
+            <label for="fc-current">Current Furnace Tier:</label>
+            <select id="fc-current" class="input-field">
+              <option value="0">Furnace 30 (FC 0)</option>
+              <option value="1">Fire Crystal 1 (FC 1)</option>
+              <option value="2">Fire Crystal 2 (FC 2)</option>
+              <option value="3">Fire Crystal 3 (FC 3)</option>
+              <option value="4">Fire Crystal 4 (FC 4)</option>
+              <option value="5" selected>Fire Crystal 5 (FC 5)</option>
+              <option value="6">Fire Crystal 6 (FC 6)</option>
+              <option value="7">Fire Crystal 7 (FC 7)</option>
+              <option value="8">Fire Crystal 8 (FC 8)</option>
+              <option value="9">Fire Crystal 9 (FC 9)</option>
+              <option value="10">Fire Crystal 10 (FC 10 - Max)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fc-target">Target Furnace Tier:</label>
+            <select id="fc-target" class="input-field">
+              <option value="1">Fire Crystal 1 (FC 1)</option>
+              <option value="2">Fire Crystal 2 (FC 2)</option>
+              <option value="3">Fire Crystal 3 (FC 3)</option>
+              <option value="4">Fire Crystal 4 (FC 4)</option>
+              <option value="5">Fire Crystal 5 (FC 5)</option>
+              <option value="6">Fire Crystal 6 (FC 6)</option>
+              <option value="7">Fire Crystal 7 (FC 7)</option>
+              <option value="8">Fire Crystal 8 (FC 8)</option>
+              <option value="9">Fire Crystal 9 (FC 9)</option>
+              <option value="10" selected>Fire Crystal 10 (FC 10 - Endeavour Tier)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result-box" style="margin-top: auto;">
+          <div class="calc-result-number" id="fc-result-val">53,500</div>
+          <div class="calc-result-subtext">Estimated Fire Crystals Required</div>
+          <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #38bdf8;">
+            Refined Fire Crystals: <strong id="fc-refined-val">1,560</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 2: SVS SPEEDUP ESTIMATOR -->
+      <div class="calculator-card" style="display: flex; flex-direction: column;">
+        <div class="calc-title">
+          <span>⚡</span>
+          <span>SvS Speedup Points Estimator</span>
+        </div>
+        <p class="calc-desc">Calculate projected tournament points earned on SvS Speedup Days (30 points per minute of universal/specific speedups).</p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+          <div class="form-group">
+            <label for="sp-days">Days:</label>
+            <input type="number" id="sp-days" class="input-field" value="5" min="0">
+          </div>
+          <div class="form-group">
+            <label for="sp-hours">Hours:</label>
+            <input type="number" id="sp-hours" class="input-field" value="12" min="0" max="23">
+          </div>
+          <div class="form-group">
+            <label for="sp-mins">Mins:</label>
+            <input type="number" id="sp-mins" class="input-field" value="30" min="0" max="59">
+          </div>
+        </div>
+
+        <div class="calc-result-box" style="margin-top: auto;">
+          <div class="calc-result-number" id="sp-points-val">238,500 pts</div>
+          <div class="calc-result-subtext">Projected SvS Preparation Phase Points</div>
+          <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #4ade80;">
+            ✓ Sufficient for Tier 3 Milestone Chest
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 3: TROOP TRAINING BATCH PLANNER -->
+      <div class="calculator-card" style="display: flex; flex-direction: column;">
+        <div class="calc-title">
+          <span>🛡️</span>
+          <span>Troop Training & Speedup Planner</span>
+        </div>
+        <p class="calc-desc">Estimate total training time and speedup requirements for troop recruitment batches.</p>
+
+        <div class="calc-inputs-row">
+          <div class="form-group">
+            <label for="tt-troops">Troop Quantity:</label>
+            <input type="number" id="tt-troops" class="input-field" value="10000" step="1000" min="100">
+          </div>
+          <div class="form-group">
+            <label for="tt-tier">Troop Tier:</label>
+            <select id="tt-tier" class="input-field">
+              <option value="9">Tier 9 (T9 Troops)</option>
+              <option value="10" selected>Tier 10 (T10 Troops)</option>
+              <option value="11">FC 1 - FC 5 Elite Troops</option>
+              <option value="12">FC 6 - FC 10 Apex Troops</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="tt-buff">Training Speed Buff (%):</label>
+          <input type="number" id="tt-buff" class="input-field" value="85" min="0" max="400">
+        </div>
+
+        <div class="calc-result-box" style="margin-top: auto;">
+          <div class="calc-result-number" id="tt-result-val">38h 45m</div>
+          <div class="calc-result-subtext">Estimated Training Time (or Speedups Needed)</div>
+          <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #fbbf24;" id="tt-svs-points">
+            SvS Training Points: ~69,750 pts
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 4: CHIEF STAMINA & BEAST PLANNER -->
+      <div class="calculator-card" style="display: flex; flex-direction: column;">
+        <div class="calc-title">
+          <span>🥫</span>
+          <span>Chief Stamina & Beast Hunt Planner</span>
+        </div>
+        <p class="calc-desc">Plan rally efficiency and Beast Hunting capacity from your current stamina reserve.</p>
+
+        <div class="calc-inputs-row">
+          <div class="form-group">
+            <label for="cs-stamina">Current Stamina:</label>
+            <input type="number" id="cs-stamina" class="input-field" value="437" min="10">
+          </div>
+          <div class="form-group">
+            <label for="cs-cost">Cost per Rally (Stamina):</label>
+            <select id="cs-cost" class="input-field">
+              <option value="10">10 (Gina / Stamina Reduction Hero)</option>
+              <option value="20">20 (Standard Beast Hunt)</option>
+              <option value="25" selected>25 (Polar Terror Rally)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result-box" style="margin-top: auto;">
+          <div class="calc-result-number" id="cs-rallies-val">17 Rallies</div>
+          <div class="calc-result-subtext">Available Marches / Rallies</div>
+          <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #34d399;" id="cs-remaining">
+            Remaining Surplus Stamina: 12
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/state266_logo.jpg" alt="State 266" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-bright);">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #ffffff;">STATE 266</span>
+          </div>
+          <p>
+            The Frozen Bastion — Official realm portal for Whiteout Survival State 266. Dedicated to Endeavour & the State 266 Council.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>The Big 3</h5>
+          <ul>
+            <li><a href="index.html#card-avm">[AVM] Shadow Wolves</a></li>
+            <li><a href="index.html#card-sok">[SOK] SilenceOfKittens</a></li>
+            <li><a href="index.html#card-ora">[ORA] OriginDesAstres</a></li>
+            <li><a href="rules.html">NAP-3 Concordat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academy & Tools</h5>
+          <ul>
+            <li><a href="academy.html">Endeavour's Academy</a></li>
+            <li><a href="index.html#timetable">Event Timetable & UTC</a></li>
+            <li><a href="calculators.html">Fire Crystal Calculator</a></li>
+            <li><a href="calculators.html">SvS Speedup Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>State 266 Hub</h5>
+          <ul>
+            <li><a href="transfer.html">State Transfer Application</a></li>
+            <li><a href="rules.html">Minister Title Helper</a></li>
+            <li><a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="index.html">Back to Home ↑</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Whiteout Survival State 266 Community Portal. Dedicated to <strong>Endeavour</strong>.
+        </div>
+        <div>
+          Published on <a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener" style="color: var(--frost-cyan); text-decoration: none;">GitHub: Zcross091/StateWeb</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-notice" id="toast-notice">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <script src="js/snow.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Subpage Specific Calculators Logic
+    // Tool 3: Troop Training Planner
+    const ttTroops = document.getElementById('tt-troops');
+    const ttTier = document.getElementById('tt-tier');
+    const ttBuff = document.getElementById('tt-buff');
+    const ttResult = document.getElementById('tt-result-val');
+    const ttSvsPts = document.getElementById('tt-svs-points');
+
+    function calculateTraining() {
+      if (!ttTroops || !ttResult) return;
+      const count = parseInt(ttTroops.value, 10) || 0;
+      const tier = parseInt(ttTier.value, 10) || 10;
+      const buff = (parseFloat(ttBuff.value) || 0) / 100;
+
+      // Base seconds per troop
+      const baseSec = tier >= 11 ? 28 : (tier === 10 ? 24 : 20);
+      const totalSec = (count * baseSec) / (1 + buff);
+
+      const hours = Math.floor(totalSec / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      ttResult.textContent = `${hours}h ${mins}m`;
+
+      // 30 points per minute of training speedup
+      const points = Math.round((totalSec / 60) * 30);
+      if (ttSvsPts) ttSvsPts.textContent = `SvS Training Points: ~${points.toLocaleString()} pts`;
+    }
+
+    [ttTroops, ttTier, ttBuff].forEach(input => {
+      if (input) input.addEventListener('input', calculateTraining);
+    });
+    calculateTraining();
+
+    // Tool 4: Chief Stamina Planner
+    const csStamina = document.getElementById('cs-stamina');
+    const csCost = document.getElementById('cs-cost');
+    const csRallies = document.getElementById('cs-rallies-val');
+    const csRem = document.getElementById('cs-remaining');
+
+    function calculateStamina() {
+      if (!csStamina || !csRallies) return;
+      const stam = parseInt(csStamina.value, 10) || 0;
+      const cost = parseInt(csCost.value, 10) || 25;
+
+      const rallies = Math.floor(stam / cost);
+      const rem = stam % cost;
+
+      csRallies.textContent = `${rallies} Rallies`;
+      if (csRem) csRem.textContent = `Remaining Surplus Stamina: ${rem}`;
+    }
+
+    [csStamina, csCost].forEach(input => {
+      if (input) input.addEventListener('input', calculateStamina);
+    });
+    calculateStamina();
+  </script>
+</body>
+</html>

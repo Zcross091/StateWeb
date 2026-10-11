@@ -1878,6 +1878,154 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
+   SUBPAGE ARCHITECTURE & LAYOUT (Rules, Academy, Calculators, Transfer)
+   ========================================================================== */
+.subpage-hero {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  background: radial-gradient(circle at 50% 0%, #152542 0%, #080d18 70%);
+  border-bottom: 1px solid var(--border-frost);
+  overflow: hidden;
+  text-align: center;
+}
+
+.breadcrumb-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-family: var(--font-tactical);
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  background: rgba(14, 23, 40, 0.7);
+  border: 1px solid var(--border-frost);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.breadcrumb-nav a {
+  color: var(--frost-cyan);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-nav a:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-sep {
+  color: var(--text-dim);
+}
+
+.subpage-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.subpage-lead {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.search-bar-wrap {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+
+.search-input-field {
+  width: 100%;
+  background: rgba(8, 14, 26, 0.85);
+  border: 1px solid var(--border-frost);
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1.5rem 0.85rem 3rem;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input-field:focus {
+  border-color: var(--frost-cyan);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+.search-icon-inside {
+  position: absolute;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--frost-cyan);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* Legal Codex / Rules Article Card */
+.article-codex-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur-glass);
+  border: 1px solid var(--border-frost);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.article-codex-card:hover {
+  border-color: var(--frost-cyan);
+}
+
+.article-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.article-badge-roman {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+}
+
+.article-enforcement-pill {
+  font-family: var(--font-tactical);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid #10b981;
+  color: #34d399;
+}
+
+.article-enforcement-pill.warning {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.calc-suite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* ==========================================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
