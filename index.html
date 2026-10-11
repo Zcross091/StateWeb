@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whiteout Survival | State 266 Official Portal — Home of Endeavour</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Official community portal for Whiteout Survival State 266. Discover the Big 3 Alliances (AVM, SOK, ORA), NAP-3 state rules, live UTC event timetable, state transfer applications, and veteran guides by Endeavour.">
+  <meta name="keywords" content="Whiteout Survival, State 266, Endeavour, AVM Shadow Wolves, SOK SilenceOfKittens, ORA OriginDesAstres, Sunfire Castle, Bear Trap, SvS Prep">
+  <meta name="author" content="Endeavour & State 266 Council">
+  <meta property="og:title" content="State 266 Official Portal | Whiteout Survival">
+  <meta property="og:description" content="Welcome to State 266: The Frozen Bastion. Home to 154B+ power, NAP-3 unity, and veteran mentor Endeavour.">
+  <meta property="og:image" content="assets/images/hero_state266.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/state266_logo.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Particle Canvas (Snow & Furnace Embers) -->
+  <canvas id="snow-canvas"></canvas>
+  <div class="top-glow-arc"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-wrap" id="nav-brand">
+        <img src="assets/images/state266_logo.jpg" alt="State 266 Crest" class="brand-logo" width="46" height="46">
+        <div class="brand-text-block">
+          <span class="brand-title">STATE 266</span>
+          <span class="brand-subtitle">THE FROZEN BASTION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#mentor" class="nav-link">Endeavour</a></li>
+          <li><a href="#alliances" class="nav-link">The Big 3</a></li>
+          <li><a href="#concordat" class="nav-link">Rules & NAP</a></li>
+          <li><a href="#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="#academy" class="nav-link">Academy</a></li>
+          <li><a href="#tools" class="nav-link">Calculators</a></li>
+          <li><a href="#transfer" class="nav-link">Transfer</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Live UTC Clock -->
+        <div class="utc-clock-badge" title="Live Whiteout Survival Server Time">
+          <span class="utc-dot"></span>
+          <span id="utc-clock-time">00:00:00 UTC</span>
+        </div>
+
+        <!-- Blizzard Weather FX Toggle -->
+        <button class="btn-icon-control active" id="btn-toggle-snow" title="Toggle Snow Particles" aria-label="Toggle snow animation">
+          ❄️
+        </button>
+
+        <!-- Ambient Glacial Audio Toggle -->
+        <button class="btn-icon-control" id="btn-toggle-audio" title="Toggle Winter Ambience & Fire Crackle" aria-label="Toggle ambient soundscape">
+          🔊
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero" style="background-image: url('assets/images/hero_state266.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="state-crest-badge">
+          <img src="assets/images/state266_logo.jpg" alt="State 266" class="crest-icon-mini">
+          <span class="crest-text">WHITEOUT SURVIVAL • SERVER REALM</span>
+        </div>
+
+        <h1 class="hero-title">
+          WELCOME TO <br>
+          <span class="state-number">STATE 266</span>
+        </h1>
+
+        <p class="hero-lead">
+          <strong>The Frozen Bastion</strong> — An elite, unified stronghold governed by honor, mutual respect, and battle-tested coordination. Official community portal for State 266, proudly anchored by veteran mentor <strong>Endeavour</strong> and our premier triumvirate.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#alliances" class="btn btn-primary">
+            🛡️ Explore The Big 3 Alliances
+          </a>
+          <a href="#concordat" class="btn btn-secondary">
+            📜 State Rules & NAP-3
+          </a>
+          <a href="#academy" class="btn btn-secondary">
+            📖 Endeavour's Academy
+          </a>
+          <a href="#transfer" class="btn btn-gold">
+            🌐 State Transfer Portal
+          </a>
+        </div>
+
+        <!-- Real-Time Stats Ticker -->
+        <div class="hero-stats-grid">
+          <div class="stat-card">
+            <div class="stat-val gold">154.45B+</div>
+            <div class="stat-label">Big 3 Combined Power</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">3</div>
+            <div class="stat-label">Active Powerhouse Alliances</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="hero-utc-clock">00:00:00</div>
+            <div class="stat-label">Server Clock (<span id="current-tz-label">UTC</span>)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">NAP-3</div>
+            <div class="stat-label">Guaranteed State Peace</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENDEAVOUR'S CHRONICLE & MENTOR WELCOME -->
+    <section class="mentor-section" id="mentor">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">State Bastion Guardian</span>
+          <h2 class="section-title">Endeavour's Welcome</h2>
+          <p class="section-subtitle">
+            A seasoned survivor's journey through the blizzard: From older states and official Discord moderation to cultivating peace and power in State 266.
+          </p>
+        </div>
+
+        <div class="mentor-card">
+          <div class="mentor-visual">
+            <div class="mentor-avatar-frame">
+              <img src="assets/images/endeavour_avatar.jpg" alt="Commander Endeavour" class="mentor-avatar-img">
+            </div>
+            <div class="mentor-badge-ribbon">
+              <span>⭐</span>
+              <span>VERIFIED WOS VETERAN</span>
+            </div>
+          </div>
+
+          <div class="mentor-details">
+            <div class="mentor-credentials">
+              <span class="tag-credential mod">🛡️ Ex-WOS Discord Mod</span>
+              <span class="tag-credential veteran">⚔️ Seasoned Player (Older States)</span>
+              <span class="tag-credential">🎓 1+ Year Newbie Coach</span>
+              <span class="tag-credential">❄️ State 266 Resident</span>
+            </div>
+
+            <h3 class="mentor-name">Endeavour</h3>
+            <div class="mentor-role-title">Former Official WOS DC Moderator • Mentor & State 266 Strategist</div>
+
+            <blockquote class="mentor-quote">
+              "After moderating for Whiteout Survival on Discord, testing mechanics through countless balance patches, and guiding hundreds of new players from their first campfire to Fire Crystal fortresses, I've seen state after state fall apart due to petty civil wars. In State 266, we do things differently. We value cooperation, fair title distribution, and unified power. Whether you are an old ally looking for a new home or an aspiring player ready to conquer SvS, 266 has a place for you."
+            </blockquote>
+
+            <div class="mentor-highlights-grid">
+              <div class="mentor-highlight-box">
+                <h5>Civil Harmony</h5>
+                <p>Zero tolerance for rogue burning. A stable state where players farm and grow safely.</p>
+              </div>
+              <div class="mentor-highlight-box">
+                <h5>SvS Readiness</h5>
+                <p>Coordinated Sunfire Castle defense and state rallies against rival servers.</p>
+              </div>
+              <div class="mentor-highlight-box">
+                <h5>Open Mentorship</h5>
+                <p>Personal advice on hero gearing, Bear Trap rally setups, and FC progression.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="copyText('Endeavour [State 266]', 'Copied Endeavour in-game name!')">
+                💬 Copy Endeavour's Name
+              </button>
+              <a href="#academy" class="btn btn-secondary">
+                📚 Read Endeavour's Guides
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE BIG 3 ALLIANCES SECTION -->
+    <section class="alliances-section" id="alliances">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">The Tri-Alliance Coalition</span>
+          <h2 class="section-title">State 266 Active Alliances</h2>
+          <p class="section-subtitle">
+            Three disciplined alliances driving the military, economic, and strategic supremacy of State 266. Fully aligned under NAP-3.
+          </p>
+        </div>
+
+        <div class="alliance-cards-grid">
+          <!-- CARD 1: AVM -->
+          <article class="alliance-card avm" id="card-avm">
+            <div class="card-crest-banner">
+              <img src="assets/images/avm_crest.jpg" alt="AVM Shadow Wolves Crest" class="crest-banner-img">
+              <div class="level-badge-overlay">LV 11 MAXED</div>
+              <div class="rank-badge-overlay">🏆 RANK 1</div>
+            </div>
+
+            <div class="card-content">
+              <h3 class="alliance-name-title">[AVM] ༒ SHAÐØW ༒ WØLVES ༒</h3>
+              <div class="alliance-tagline">Apex Military Spearhead • Sunfire Castle Vanguard</div>
+
+              <div class="ingame-stats-list">
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">⚡ Total Power:</span>
+                  <span class="stat-value-bold power">76,108,771,766</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👑 Alliance Leader:</span>
+                  <span class="stat-value-bold">༒Duke Ragnar༒AvM</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👥 Members:</span>
+                  <span class="stat-value-bold">97 / 100</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">💬 Language:</span>
+                  <span class="stat-value-bold">All languages</span>
+                </div>
+              </div>
+
+              <div class="ingame-notice-box">
+                <div>"Recruitment: ༒ ZØRØ ༒AvM<br>Events: Coordinated via alliance notice"</div>
+                <div class="whitelist-notice">✓ Whitelisted players pre-approved to rejoin</div>
+              </div>
+
+              <div class="card-actions">
+                <button class="btn btn-primary" onclick="copyText('༒ ZØRØ ༒AvM', 'AVM Recruiter ID Copied!')">
+                  ✉️ Copy Recruiter
+                </button>
+                <button class="btn btn-secondary" onclick="openAllianceModal('avm')">
+                  🔍 Full Dossier
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2: SOK -->
+          <article class="alliance-card sok" id="card-sok">
+            <div class="card-crest-banner">
+              <img src="assets/images/sok_crest.jpg" alt="SOK SilenceOfKittens Crest" class="crest-banner-img">
+              <div class="level-badge-overlay">LV 11 MAXED</div>
+              <div class="rank-badge-overlay">🥈 RANK 2</div>
+            </div>
+
+            <div class="card-content">
+              <h3 class="alliance-name-title">[SOK] SilenceOfKittens</h3>
+              <div class="alliance-tagline">Peace, Harmony & Fierce Feline Defense</div>
+
+              <div class="ingame-stats-list">
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">⚡ Total Power:</span>
+                  <span class="stat-value-bold power">43,470,849,508</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👑 Alliance Leader:</span>
+                  <span class="stat-value-bold">TrulyBee</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👥 Members:</span>
+                  <span class="stat-value-bold">73 / 100</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">💬 Language:</span>
+                  <span class="stat-value-bold">All languages</span>
+                </div>
+              </div>
+
+              <div class="ingame-notice-box">
+                <div>"Maintaining peace and harmony :) watch out for the kitties!"</div>
+                <div class="whitelist-notice">✓ Whitelisted players pre-approved to rejoin</div>
+              </div>
+
+              <div class="card-actions">
+                <button class="btn btn-primary" onclick="copyText('TrulyBee', 'SOK Leader ID Copied!')">
+                  ✉️ Copy Leader
+                </button>
+                <button class="btn btn-secondary" onclick="openAllianceModal('sok')">
+                  🔍 Full Dossier
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3: ORA -->
+          <article class="alliance-card ora" id="card-ora">
+            <div class="card-crest-banner">
+              <img src="assets/images/ora_crest.jpg" alt="ORA OriginDesAstres Crest" class="crest-banner-img">
+              <div class="level-badge-overlay">LV 11 MAXED</div>
+              <div class="rank-badge-overlay">🥉 RANK 3</div>
+            </div>
+
+            <div class="card-content">
+              <h3 class="alliance-name-title">[ORA] OriginDesAstres</h3>
+              <div class="alliance-tagline">Tactical English Elite • Disciplined Event Timings</div>
+
+              <div class="ingame-stats-list">
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">⚡ Total Power:</span>
+                  <span class="stat-value-bold power">34,869,766,674</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👑 Alliance Leader:</span>
+                  <span class="stat-value-bold">LululaKastagne</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">👥 Members:</span>
+                  <span class="stat-value-bold">83 / 100</span>
+                </div>
+                <div class="ingame-stat-row">
+                  <span class="stat-label-with-icon">💬 Language:</span>
+                  <span class="stat-value-bold">English</span>
+                </div>
+              </div>
+
+              <div class="ingame-notice-box">
+                <div>"come have some fun<br>event times 13 & 19 utc"</div>
+                <div style="color: #60a5fa; font-size: 0.78rem; font-weight: 600; margin-top: 0.4rem;">
+                  🏰 Reqs: FC 5+ | ⚔️ Power ≥ 5,000,000
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <button class="btn btn-primary" onclick="copyText('LululaKastagne', 'ORA Leader ID Copied!')">
+                  ✉️ Copy Leader
+                </button>
+                <button class="btn btn-secondary" onclick="openAllianceModal('ora')">
+                  🔍 Full Dossier
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Power Distribution Comparison Matrix -->
+        <div class="matrix-container">
+          <div class="matrix-header">
+            <div>
+              <h4 style="font-size: 1.25rem;">State 266 Military Balance (Big 3 Power Share)</h4>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">Cumulative power: 154,449,388,148 across top 3 banners.</p>
+            </div>
+            <span class="tag-credential veteran">Total: 154.4B Power</span>
+          </div>
+
+          <div class="matrix-bar-item">
+            <div class="matrix-bar-info">
+              <span>[AVM] SHAÐØW WØLVES (76.11B)</span>
+              <span style="color: var(--avm-crimson);">49.3%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill avm-bar" style="width: 49.3%;"></div>
+            </div>
+          </div>
+
+          <div class="matrix-bar-item">
+            <div class="matrix-bar-info">
+              <span>[SOK] SilenceOfKittens (43.47B)</span>
+              <span style="color: var(--frost-cyan);">28.1%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill sok-bar" style="width: 28.1%;"></div>
+            </div>
+          </div>
+
+          <div class="matrix-bar-item">
+            <div class="matrix-bar-info">
+              <span>[ORA] OriginDesAstres (34.87B)</span>
+              <span style="color: var(--ora-celestial);">22.6%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill ora-bar" style="width: 22.6%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATE CONCORDAT & NAP RULES -->
+    <section class="concordat-section" id="concordat">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Constitutional Codex</span>
+          <h2 class="section-title">State 266 Concordat & NAP</h2>
+          <p class="section-subtitle">
+            Binding state treaties established by AVM, SOK, and ORA to guarantee domestic stability, fair resource access, and overwhelming SvS triumph.
+          </p>
+        </div>
+
+        <div class="rules-grid">
+          <div class="rule-box">
+            <div class="rule-header">
+              <div class="rule-icon-pill">🛡️</div>
+              <h3 class="rule-title">1. NAP-3 Non-Aggression Pact</h3>
+            </div>
+            <div class="rule-body">
+              <p>Strict non-aggression among the top 3 alliances:</p>
+              <ul>
+                <li><strong>No city attacks:</strong> Raiding member cities of AVM, SOK, or ORA is strictly prohibited.</li>
+                <li><strong>Zero tile hitting:</strong> Gathering resource nodes across all provinces are 100% sacred for all citizens.</li>
+                <li><strong>Banner & HQ integrity:</strong> Alliance territory boundaries are respected without encroaching builds.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-header">
+              <div class="rule-icon-pill">👑</div>
+              <h3 class="rule-title">2. Sunfire Castle & Presidency</h3>
+            </div>
+            <div class="rule-body">
+              <p>Sunfire Castle governance is managed by state consensus:</p>
+              <ul>
+                <li><strong>Rotational Presidency:</strong> The Presidency alternates fairly between top alliances to share state buffs.</li>
+                <li><strong>State Title Allocation:</strong> Minister titles (Construction, Research, Training) are distributed on-demand 24/7.</li>
+                <li><strong>Honorary Awards:</strong> Castle reward packs distributed based on SvS and event contributions.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-header">
+              <div class="rule-icon-pill">⚔️</div>
+              <h3 class="rule-title">3. Brothers In Arms / KE Protocol</h3>
+            </div>
+            <div class="rule-body">
+              <p>Strict rules during the Brothers In Arms (Kill Event):</p>
+              <ul>
+                <li><strong>NAP tags safe:</strong> AVM, SOK, and ORA members are forbidden from hitting each other during KE.</li>
+                <li><strong>Unshielded inactive farm hits only:</strong> Only unaligned, untagged inactive cities may be scavenged.</li>
+                <li><strong>Hospital limit discipline:</strong> Never cause permanent troop loss to State 266 survivors.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-header">
+              <div class="rule-icon-pill">🔥</div>
+              <h3 class="rule-title">4. SvS Total Mobilization</h3>
+            </div>
+            <div class="rule-body">
+              <p>During State vs State (SvS) War Phase:</p>
+              <ul>
+                <li><strong>Unified State Command:</strong> AVM, SOK, and ORA leaders form the State War Council.</li>
+                <li><strong>Sunfire Defense:</strong> Coordinated garrison rotations and turret defense against enemy invaders.</li>
+                <li><strong>Invading Rallies:</strong> Synchronized double-rallies led by our highest lethality captains.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minister Title Request Helper -->
+        <div class="title-helper-card">
+          <div class="title-helper-info">
+            <h4>📜 Quick Minister Title Request Generator</h4>
+            <p>
+              Need a Construction, Research, or Training title from the President? Fill in your details below and click Copy to generate the official chat request format recognized by State 266 ministers.
+            </p>
+          </div>
+
+          <div class="title-generator-controls">
+            <input type="text" id="title-char-name" class="input-field" placeholder="Your In-Game Survivor Name">
+            <select id="title-type" class="input-field">
+              <option value="Interior (Construction +10%)">🏛️ Minister of Interior (Construction Speed +10%)</option>
+              <option value="Strategy (Research +10%)">🔬 Minister of Strategy (Research Speed +10%)</option>
+              <option value="Defense (Training +10%)">⚔️ Minister of Defense (Troop Training +10%)</option>
+              <option value="Justice (Gathering +15%)">🌾 Minister of Justice (Resource Gathering +15%)</option>
+            </select>
+            <input type="text" id="title-coords" class="input-field" placeholder="City Coordinates (e.g. #266 X:520 Y:640)">
+            <button class="btn btn-primary" id="btn-copy-title-req">
+              📋 Generate & Copy Title Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT TIMETABLE & UTC SCHEDULER -->
+    <section class="timetable-section" id="timetable">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Real-Time Clock & Events</span>
+          <h2 class="section-title">State 266 Event Timetable</h2>
+          <p class="section-subtitle">
+            Synchronize your alarms with State 266. Switch to your local timezone below to see exact local times for alliance events!
+          </p>
+        </div>
+
+        <div class="timezone-toolbar">
+          <div class="active-time-display">
+            <span style="font-weight: 700; color: var(--text-muted);">ACTIVE CLOCK:</span>
+            <span class="time-clock-hero" id="active-converted-time">00:00:00</span>
+          </div>
+
+          <div class="tz-selector-wrap">
+            <label for="timezone-select">Select Your Timezone:</label>
+            <select id="timezone-select" class="tz-select">
+              <option value="UTC" selected>Universal Coordinated Time (UTC+0)</option>
+              <option value="EST">US Eastern (EST / UTC-5)</option>
+              <option value="EDT">US Eastern Daylight (EDT / UTC-4)</option>
+              <option value="CST">US Central (CST / UTC-6)</option>
+              <option value="PST">US Pacific (PST / UTC-8)</option>
+              <option value="PDT">US Pacific Daylight (PDT / UTC-7)</option>
+              <option value="GMT">UK / London (GMT / UTC+0)</option>
+              <option value="BST">UK Summer (BST / UTC+1)</option>
+              <option value="CET">Central Europe (CET / UTC+1)</option>
+              <option value="CEST">Central Europe Summer (CEST / UTC+2)</option>
+              <option value="IST">India Standard Time (IST / UTC+5:30)</option>
+              <option value="CST_ASIA">Singapore / China / Perth (UTC+8)</option>
+              <option value="JST">Japan / Korea (JST / UTC+9)</option>
+              <option value="AEST">Australia Eastern (AEST / UTC+10)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="events-cards-grid">
+          <!-- Event 1: Bear Trap -->
+          <div class="event-box">
+            <div class="event-icon-badge">🐻</div>
+            <h3 class="event-title">Bear Trap Rallies</h3>
+            <div class="event-alliances-tag">ORA, AVM, SOK</div>
+            <p class="event-schedule-desc">
+              <strong>ORA Slots:</strong> <span id="ora-event-slot-label">13:00 & 19:00 (UTC)</span><br>
+              <strong>AVM & SOK:</strong> Scheduled via in-game alliance mail.
+            </p>
+            <div class="event-countdown-pill" id="bt-countdown-val">
+              Calculating...
+            </div>
+          </div>
+
+          <!-- Event 2: Daily Reset -->
+          <div class="event-box">
+            <div class="event-icon-badge">🌅</div>
+            <h3 class="event-title">Daily Server Reset</h3>
+            <div class="event-alliances-tag">Server-Wide</div>
+            <p class="event-schedule-desc">
+              All daily missions, VIP points, chief stamina refreshes, and merchant deals refresh precisely at <strong>00:00 UTC</strong>.
+            </p>
+            <div class="event-countdown-pill" id="reset-countdown-val">
+              Calculating...
+            </div>
+          </div>
+
+          <!-- Event 3: Crazy Joe -->
+          <div class="event-box">
+            <div class="event-icon-badge">🧟</div>
+            <h3 class="event-title">Crazy Joe Defense</h3>
+            <div class="event-alliances-tag">Big 3 Defense</div>
+            <p class="event-schedule-desc">
+              Bi-weekly siege event. Reinforce alliance mates and defend HQ against 20 barbarian waves.
+            </p>
+            <div class="event-countdown-pill" style="font-size: 0.95rem; color: var(--frost-cyan);">
+              Weekly Schedule
+            </div>
+          </div>
+
+          <!-- Event 4: Sunfire / SvS -->
+          <div class="event-box">
+            <div class="event-icon-badge">🏰</div>
+            <h3 class="event-title">Sunfire Castle / SvS</h3>
+            <div class="event-alliances-tag">State 266 Unified</div>
+            <p class="event-schedule-desc">
+              State battle phase commencing Saturdays 12:00 UTC. Full alliance mobilization to claim the Sunfire Throne.
+            </p>
+            <div class="event-countdown-pill" style="font-size: 0.95rem; color: var(--gold-bright);">
+              Bi-Weekly Saturday
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENDEAVOUR'S SURVIVAL ACADEMY -->
+    <section class="academy-section" id="academy">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Veteran Knowledge Vault</span>
+          <h2 class="section-title">Endeavour's Survival Academy</h2>
+          <p class="section-subtitle">
+            Curated strategies distilled from 1+ year of coaching newbies and serving as a Whiteout Survival Discord Mod. Built to turn fresh survivors into state champions.
+          </p>
+        </div>
+
+        <div class="academy-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Guides</button>
+          <button class="filter-btn" data-filter="combat">🐻 Rallies & Bear Trap</button>
+          <button class="filter-btn" data-filter="heroes">🛡️ Hero Synergy</button>
+          <button class="filter-btn" data-filter="furnace">🔥 Furnace & Fire Crystal</button>
+          <button class="filter-btn" data-filter="svs">🏆 SvS Preparation</button>
+        </div>
+
+        <div class="guides-grid">
+          <!-- Guide 1: Bear Trap -->
+          <article class="guide-card" data-category="combat">
+            <span class="guide-category-tag">⚔️ Combat Mastery</span>
+            <h3 class="guide-title">Bear Trap: Max Damage & Rally Multipliers</h3>
+            <p class="guide-excerpt">
+              The secret to cracking top damage scores in Bear Trap isn't just troop count—it is rally leader buff stacking and joiner hero selection.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Joiner Heroes:</strong> Only send <strong>Jessie</strong> (up to +25% damage boost), <strong>Jeronimo</strong>, <strong>Seo-yoon</strong>, or <strong>Mia</strong>. Never send defensive heroes as rally joiners!</li>
+                <li><strong>Troop Ratio:</strong> 10% Infantry, 10% Lancer, 80% Marksman (or 20/20/60 depending on your gear).</li>
+                <li><strong>Chief Skills:</strong> Activate 'Immediate Production' and combat attack buffs right before the trap opens.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Guide 2: Fire Crystal Prioritization -->
+          <article class="guide-card" data-category="furnace">
+            <span class="guide-category-tag">🔥 Furnace Progression</span>
+            <h3 class="guide-title">Fire Crystal (FC) Roadmap: FC1 to FC5+</h3>
+            <p class="guide-excerpt">
+              Fire Crystals are the scarcest commodity after reaching Furnace 30. How you allocate them dictates your survival in State 266 and SvS.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Priority 1 - Furnace:</strong> Always upgrade your Furnace first to unlock max troop capacity and camp tiers.</li>
+                <li><strong>Priority 2 - Camps:</strong> Infantry Camp first (stronger meatshields), then Marksman, then Lancer.</li>
+                <li><strong>Save for SvS:</strong> Never push FC upgrades during peacetime lull days—hoard crystals for SvS Preparation Phase Day 4/5.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Guide 3: SvS Prep Hoarding -->
+          <article class="guide-card" data-category="svs">
+            <span class="guide-category-tag">🏆 State vs State</span>
+            <h3 class="guide-title">SvS Prep Phase: How to Score 10M+ Points</h3>
+            <p class="guide-excerpt">
+              Winning State vs State begins 6 days before the Sunfire battle. The preparation phase leaderboard determines who controls castle bonuses.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Day 1 - Chief Gear & Charms:</strong> Hoard polish tools and alloy. Only upgrade during this 24h window.</li>
+                <li><strong>Day 2 - Hero Shards:</strong> Never use general mythic shards until Day 2.</li>
+                <li><strong>Day 4 & 5 - Speedups:</strong> Coordinate your biggest construction/training speedups with Minister titles and alliance pet buffs.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Guide 4: Hero Formations -->
+          <article class="guide-card" data-category="heroes">
+            <span class="guide-category-tag">🛡️ Team Building</span>
+            <h3 class="guide-title">Hero Formations & Gear Optimization</h3>
+            <p class="guide-excerpt">
+              Optimizing hero gear stats: Lethality, Health, Defense, and Attack. How to assemble unbeatable rally lines.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Infantry:</strong> Sergey & Flint (F2P/Low Spender anchors) -> Ahmose / Hector in later generations. Prioritize Health & Defense gear.</li>
+                <li><strong>Lancers:</strong> Molly & Philly -> Mia. Prioritize Lethality & Attack gear.</li>
+                <li><strong>Marksmen:</strong> Alonso & Greg -> Lynn. The primary DPS carry of every combat encounter.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Guide 5: Shield Discipline -->
+          <article class="guide-card" data-category="svs">
+            <span class="guide-category-tag">🛡️ Defense Protocol</span>
+            <h3 class="guide-title">City Defense & Zero-Loss Hospital Management</h3>
+            <p class="guide-excerpt">
+              How to safeguard your troops during hostile cross-state incursions and prevent catastrophic casualties.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Shield Schedules:</strong> 24h shields active prior to 00:00 UTC on SvS Battle day.</li>
+                <li><strong>Garrison Buffs:</strong> Never reinforce a burning city unless you have designated high-stat garrison leads.</li>
+                <li><strong>Hospital Overflow:</strong> Keep infirmary capacity above 70% free to prevent troop death into enlistment offices.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Guide 6: F2P & Low Spender Economy -->
+          <article class="guide-card" data-category="furnace">
+            <span class="guide-category-tag">💰 Economic Growth</span>
+            <h3 class="guide-title">Economy & Farm Account Architecture</h3>
+            <p class="guide-excerpt">
+              Mastering resource balance: Steel, Coal, Meat, and Wood. How top players run farm accounts to fuel constant upgrades.
+            </p>
+            <div class="guide-key-points">
+              <ul>
+                <li><strong>Farm Alt Placement:</strong> Keep farm cities near alliance borders for safe gathering.</li>
+                <li><strong>Research Specialization:</strong> Maximize Growth Tech trees first (Engineering and Mathematics).</li>
+                <li><strong>Arena of Glory:</strong> Daily 5 attacks for store currency to buy hero gear stones.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATE CALCULATORS & TOOLS -->
+    <section class="tools-section" id="tools">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Tactical Utilities</span>
+          <h2 class="section-title">State 266 Calculators</h2>
+          <p class="section-subtitle">
+            Plan your next upgrade with pinpoint precision. Save resources and calculate SvS preparation points before deploying speedups.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Calculator 1: Fire Crystal -->
+          <div class="calculator-card">
+            <div class="calc-title">
+              <span>🔥</span>
+              <span>Fire Crystal (FC) Calculator</span>
+            </div>
+            <p class="calc-desc">Calculate total Fire Crystals required between furnace milestones.</p>
+
+            <div class="calc-inputs-row">
+              <div class="form-group">
+                <label for="fc-current">Current Level:</label>
+                <select id="fc-current" class="input-field">
+                  <option value="0">Furnace 30 (FC 0)</option>
+                  <option value="1">Fire Crystal 1 (FC 1)</option>
+                  <option value="2">Fire Crystal 2 (FC 2)</option>
+                  <option value="3">Fire Crystal 3 (FC 3)</option>
+                  <option value="4">Fire Crystal 4 (FC 4)</option>
+                  <option value="5" selected>Fire Crystal 5 (FC 5)</option>
+                  <option value="6">Fire Crystal 6 (FC 6)</option>
+                  <option value="7">Fire Crystal 7 (FC 7)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="fc-target">Target Level:</label>
+                <select id="fc-target" class="input-field">
+                  <option value="1">Fire Crystal 1 (FC 1)</option>
+                  <option value="2">Fire Crystal 2 (FC 2)</option>
+                  <option value="3">Fire Crystal 3 (FC 3)</option>
+                  <option value="4">Fire Crystal 4 (FC 4)</option>
+                  <option value="5">Fire Crystal 5 (FC 5)</option>
+                  <option value="6" selected>Fire Crystal 6 (FC 6)</option>
+                  <option value="7">Fire Crystal 7 (FC 7)</option>
+                  <option value="8">Fire Crystal 8 (FC 8)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-result-box">
+              <div class="calc-result-number" id="fc-result-val">4,800</div>
+              <div class="calc-result-subtext">Estimated Fire Crystals Required</div>
+              <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #38bdf8;">
+                Refined Fire Crystals: <strong id="fc-refined-val">80</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculator 2: Speedup Points -->
+          <div class="calculator-card">
+            <div class="calc-title">
+              <span>⚡</span>
+              <span>SvS Speedup Points Estimator</span>
+            </div>
+            <p class="calc-desc">Estimate points earned on SvS Speedup Days (30 points per minute).</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label for="sp-days">Days:</label>
+                <input type="number" id="sp-days" class="input-field" value="5" min="0">
+              </div>
+              <div class="form-group">
+                <label for="sp-hours">Hours:</label>
+                <input type="number" id="sp-hours" class="input-field" value="12" min="0" max="23">
+              </div>
+              <div class="form-group">
+                <label for="sp-mins">Mins:</label>
+                <input type="number" id="sp-mins" class="input-field" value="30" min="0" max="59">
+              </div>
+            </div>
+
+            <div class="calc-result-box">
+              <div class="calc-result-number" id="sp-points-val">238,500 pts</div>
+              <div class="calc-result-subtext">Projected SvS Preparation Phase Points</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATE TRANSFER & RECRUITMENT PORTAL -->
+    <section class="transfer-section" id="transfer">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Immigration Desk</span>
+          <h2 class="section-title">Transfer to State 266</h2>
+          <p class="section-subtitle">
+            Looking for a drama-free state where your power is valued and respected? Join State 266 during the official State Transfer Event.
+          </p>
+        </div>
+
+        <div class="transfer-card">
+          <div class="transfer-grid">
+            <div class="transfer-info">
+              <h3>Why Move to State 266?</h3>
+              <p>
+                State 266 is renowned for its high-level coordination, balanced power across the Big 3 (AVM, SOK, ORA), and total protection for peaceful farmers and SvS warriors alike.
+              </p>
+
+              <h4 style="color: var(--gold-bright); margin-bottom: 0.75rem; font-size: 1.05rem;">Direct Leadership Contacts:</h4>
+              <div class="transfer-contacts-list">
+                <div class="contact-badge-item">
+                  <div class="contact-meta">
+                    <span style="font-size: 1.3rem;">🐺</span>
+                    <div>
+                      <div class="contact-name">༒ ZØRØ ༒AvM</div>
+                      <div class="contact-role">AVM Recruitment Officer (Rank #1)</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" onclick="copyText('༒ ZØRØ ༒AvM', 'AVM Recruiter ID Copied!')">Copy</button>
+                </div>
+
+                <div class="contact-badge-item">
+                  <div class="contact-meta">
+                    <span style="font-size: 1.3rem;">🐾</span>
+                    <div>
+                      <div class="contact-name">TrulyBee</div>
+                      <div class="contact-role">SOK Alliance Leader (Rank #2)</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" onclick="copyText('TrulyBee', 'SOK Leader ID Copied!')">Copy</button>
+                </div>
+
+                <div class="contact-badge-item">
+                  <div class="contact-meta">
+                    <span style="font-size: 1.3rem;">⚖️</span>
+                    <div>
+                      <div class="contact-name">LululaKastagne</div>
+                      <div class="contact-role">ORA Alliance Leader (Rank #3)</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" onclick="copyText('LululaKastagne', 'ORA Leader ID Copied!')">Copy</button>
+                </div>
+
+                <div class="contact-badge-item">
+                  <div class="contact-meta">
+                    <span style="font-size: 1.3rem;">⭐</span>
+                    <div>
+                      <div class="contact-name">Endeavour</div>
+                      <div class="contact-role">State Mentor & Veteran Advisor</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" onclick="copyText('Endeavour', 'Endeavour In-Game ID Copied!')">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transfer Application Letter Builder -->
+            <div class="transfer-form">
+              <h4 style="font-size: 1.15rem; color: #ffffff;">Generate Your Transfer Application</h4>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <input type="text" id="tf-player-name" class="input-field" placeholder="In-Game Name">
+                <input type="text" id="tf-power" class="input-field" placeholder="Power (e.g. 85,000,000)">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <select id="tf-furnace" class="input-field">
+                  <option value="Furnace 30">Furnace 30</option>
+                  <option value="FC 1">FC 1</option>
+                  <option value="FC 2">FC 2</option>
+                  <option value="FC 3">FC 3</option>
+                  <option value="FC 4">FC 4</option>
+                  <option value="FC 5" selected>FC 5 (Fire Crystal 5)</option>
+                  <option value="FC 6">FC 6</option>
+                  <option value="FC 7">FC 7</option>
+                  <option value="FC 8+">FC 8+</option>
+                </select>
+
+                <select id="tf-alliance-pref" class="input-field">
+                  <option value="[AVM] Shadow Wolves">Target: [AVM] Shadow Wolves</option>
+                  <option value="[SOK] SilenceOfKittens">Target: [SOK] SilenceOfKittens</option>
+                  <option value="[ORA] OriginDesAstres">Target: [ORA] OriginDesAstres</option>
+                  <option value="Any Top 3 Alliance" selected>Target: Any Top 3 Alliance</option>
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <input type="text" id="tf-language" class="input-field" placeholder="Language (e.g. English)">
+                <input type="text" id="tf-tz" class="input-field" placeholder="Timezone (e.g. UTC / EST / CET)">
+              </div>
+
+              <div class="output-letter-preview" id="tf-letter-output">
+                <!-- Dynamically generated letter -->
+              </div>
+
+              <button class="btn btn-primary" id="btn-copy-transfer">
+                📋 Copy Application Letter to Clipboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/state266_logo.jpg" alt="State 266" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-bright);">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #ffffff;">STATE 266</span>
+          </div>
+          <p>
+            The Frozen Bastion — Official realm portal for Whiteout Survival State 266. Built for our warriors, farmers, and transfer recruits.
+          </p>
+          <div style="margin-top: 1rem; color: var(--gold-bright); font-size: 0.85rem; font-family: var(--font-tactical);">
+            "State Web for wherever Endeavour is"
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>The Big 3</h5>
+          <ul>
+            <li><a href="#card-avm">[AVM] Shadow Wolves</a></li>
+            <li><a href="#card-sok">[SOK] SilenceOfKittens</a></li>
+            <li><a href="#card-ora">[ORA] OriginDesAstres</a></li>
+            <li><a href="#concordat">NAP-3 Concordat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academy & Tools</h5>
+          <ul>
+            <li><a href="#academy">Endeavour's Academy</a></li>
+            <li><a href="#timetable">Event Timetable & UTC</a></li>
+            <li><a href="#tools">Fire Crystal Calculator</a></li>
+            <li><a href="#tools">SvS Speedup Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>State 266 Hub</h5>
+          <ul>
+            <li><a href="#transfer">State Transfer Application</a></li>
+            <li><a href="#concordat">Minister Title Helper</a></li>
+            <li><a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="#hero">Back to Top ↑</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Whiteout Survival State 266 Community Portal. Dedicated to <strong>Endeavour</strong> & the State 266 Council.
+        </div>
+        <div>
+          Published on <a href="https://github.com/Zcross091/StateWeb" target="_blank" rel="noopener" style="color: var(--frost-cyan); text-decoration: none;">GitHub: Zcross091/StateWeb</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL POPUP FOR DETAILED ALLIANCE ROSTER -->
+  <div class="modal-backdrop" id="alliance-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="modal-alliance-title" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #ffffff;">Alliance Profile</h3>
+      <div id="modal-alliance-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-notice" id="toast-notice">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/snow.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
