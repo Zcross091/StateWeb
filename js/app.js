@@ -667,13 +667,13 @@ Looking forward to fighting alongside State 266! Thank you!`;
       title: '[AVM] ༒ SHAÐØW ༒ WØLVES ༒',
       rank: '#1 Apex Military Powerhouse',
       power: '76,108,771,766 (76.1 Billion)',
-      leader: '༒Duke Ragnar༒AvM',
+      leader: '༒ Endeavour ༒ (Duke Ragnar)',
       recruiter: '༒ ZØRØ ༒AvM',
       members: '97 / 100 Members (97% Full)',
       languages: 'All Languages (Multi-cultural Global)',
       summary: `The reigning powerhouse of State 266. AVM leads Sunfire Castle rallies and represents the primary spearhead for State vs State (SvS) conquests. Boasting over 76 Billion power and veteran rally leaders, AVM is built for high-end combat, fortress defense, and relentless progression.`,
       whitelist: `Whitelisted players are pre-approved to rejoin without permission.`,
-      contact: `In-game: ༒ ZØRØ ༒AvM or ༒Duke Ragnar༒AvM`
+      contact: `In-game: ༒ Endeavour ༒ or ༒ ZØRØ ༒AvM`
     },
     sok: {
       title: '[SOK] SilenceOfKittens',

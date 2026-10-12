@@ -22,7 +22,7 @@
 
 | Crest | Tag & Name | Rank | Leader / Contact | Power | Members | Focus & Notes |
 | :---: | :--- | :---: | :--- | :---: | :---: | :--- |
-| 🐺 | **[AVM] ༒ SHAÐØW ༒ WØLVES ༒** | #1 | `༒Duke Ragnar༒AvM` / `༒ ZØRØ ༒AvM` | **76.10 B** | 97/100 | Apex fighting force, Sunfire Castle rally spearhead. |
+| 🐺 | **[AVM] ༒ SHAÐØW ༒ WØLVES ༒** | #1 | `༒ Endeavour ༒ (Duke Ragnar)` / `༒ ZØRØ ༒AvM` | **76.10 B** | 97/100 | Apex fighting force, Sunfire Castle rally spearhead. |
 | 🐾 | **[SOK] SilenceOfKittens** | #2 | `TrulyBee` | **43.47 B** | 73/100 | High-harmony community, fortress defense, loyal & friendly. |
 | ⚖️ | **[ORA] OriginDesAstres** | #3 | `LululaKastagne` | **34.86 B** | 83/100 | Tactical English-speaking elite, 13:00 & 19:00 UTC event slots, FC5+ req. |
 
