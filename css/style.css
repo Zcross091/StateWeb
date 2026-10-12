@@ -1083,6 +1083,10 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1.25rem;
 }
 
+.ingame-stats-list:last-child {
+  margin-bottom: 0;
+}
+
 .ingame-stat-row {
   display: flex;
   justify-content: space-between;
