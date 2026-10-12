@@ -32,7 +32,6 @@
 
 1. **Atmospheric Glacial & Ember Engine**:
    - Interactive HTML5 canvas particle snowfall with rising furnace embers.
-   - Procedural Web Audio API soundscape (subtle arctic wind & campfire crackle) without external asset overhead.
 2. **Real-Time Universal Clock & Event Scheduler**:
    - Live **UTC Server Clock** matching in-game reset times.
    - Instant timezone converter (EST, PST, CET, GMT, IST, JST, AEST, etc.).

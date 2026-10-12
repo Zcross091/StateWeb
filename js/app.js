@@ -1,7 +1,7 @@
 /**
  * Whiteout Survival - State 266 Portal Application Logic
  * Interactive UTC Clocks, Timezone Converter, Guides Filter,
- * Calculators (FC & Speedups), Ambient Audio Synth, and Copy Handlers.
+ * Calculators (FC & Speedups), and Copy Handlers.
  */
 
 (function () {
@@ -179,7 +179,7 @@
   updateClocks();
   updateEventSlotLabels();
 
-  // --- 3. ATMOSPHERIC WEATHER & AMBIENT AUDIO ENGINE ---
+  // --- 3. ATMOSPHERIC WEATHER ENGINE ---
   const snowToggleBtn = document.getElementById('btn-toggle-snow');
   if (snowToggleBtn) {
     snowToggleBtn.addEventListener('click', () => {
@@ -187,96 +187,6 @@
         const active = window.Atmosphere.toggle();
         snowToggleBtn.classList.toggle('active', active);
         showToast(active ? 'Blizzard FX Enabled' : 'Blizzard FX Paused');
-      }
-    });
-  }
-
-  // Procedural Web Audio Ambience (Synthesizes soft arctic wind + gentle fireplace embers)
-  let audioCtx = null;
-  let isAudioPlaying = false;
-  let windGain = null;
-  let crackleNode = null;
-  const audioToggleBtn = document.getElementById('btn-toggle-audio');
-
-  function initAtmosphericAudio() {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioContext();
-
-      // White noise generator for arctic wind
-      const bufferSize = audioCtx.sampleRate * 2;
-      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      const output = noiseBuffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        output[i] = Math.random() * 2 - 1;
-      }
-
-      const whiteNoise = audioCtx.createBufferSource();
-      whiteNoise.buffer = noiseBuffer;
-      whiteNoise.loop = true;
-
-      // Filter for low wind howl
-      const bandpass = audioCtx.createBiquadFilter();
-      bandpass.type = 'bandpass';
-      bandpass.frequency.setValueAtTime(320, audioCtx.currentTime);
-      bandpass.Q.setValueAtTime(3.0, audioCtx.currentTime);
-
-      // Lowpass for distant rumble
-      const lowpass = audioCtx.createBiquadFilter();
-      lowpass.type = 'lowpass';
-      lowpass.frequency.setValueAtTime(450, audioCtx.currentTime);
-
-      windGain = audioCtx.createGain();
-      windGain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-
-      whiteNoise.connect(bandpass);
-      bandpass.connect(lowpass);
-      lowpass.connect(windGain);
-      windGain.connect(audioCtx.destination);
-
-      whiteNoise.start();
-
-      // Subtle fire crackle synthesizer
-      const crackleScript = audioCtx.createScriptProcessor(4096, 1, 1);
-      crackleScript.onaudioprocess = function (e) {
-        const out = e.outputBuffer.getChannelData(0);
-        for (let i = 0; i < 4096; i++) {
-          if (Math.random() < 0.003) {
-            out[i] = (Math.random() * 2 - 1) * 0.15;
-          } else {
-            out[i] = 0;
-          }
-        }
-      };
-      const fireGain = audioCtx.createGain();
-      fireGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-      crackleScript.connect(fireGain);
-      fireGain.connect(audioCtx.destination);
-
-      isAudioPlaying = true;
-      if (audioToggleBtn) audioToggleBtn.classList.add('active');
-      showToast('Glacial Ambience Playing ❄️🔥');
-    } catch (err) {
-      console.warn('Web Audio error:', err);
-    }
-  }
-
-  if (audioToggleBtn) {
-    audioToggleBtn.addEventListener('click', () => {
-      if (!audioCtx) {
-        initAtmosphericAudio();
-      } else {
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume();
-          isAudioPlaying = true;
-          audioToggleBtn.classList.add('active');
-          showToast('Glacial Ambience Resumed');
-        } else if (audioCtx.state === 'running') {
-          audioCtx.suspend();
-          isAudioPlaying = false;
-          audioToggleBtn.classList.remove('active');
-          showToast('Ambience Muted');
-        }
       }
     });
   }
