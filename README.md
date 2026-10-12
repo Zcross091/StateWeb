@@ -8,7 +8,7 @@
 ---
 
 ## About State 266 & Endeavour
-- **In-Game Name:** `[AVM] ༒ Endeavour ༒`
+- **In-Game Name:** `༒ Endeavour ༒`
 - **Player ID:** `16278053`
 - **Combat Stats:** **942.5M Power** • **157.5M PvP Kills**
 - **Furnace Level:** **Fire Crystal 10 (FC 10 - Apex Tier)**

@@ -337,7 +337,7 @@
           verifiedPlayerDisplay.innerHTML = `
             <img src="assets/images/endeavour_oni.jpg" alt="Player Avatar" class="verified-avatar">
             <div>
-              <div style="font-weight: 700; color: #ffffff;">[AVM] ༒ Endeavour ༒ <span style="font-size: 0.75rem; color: #10b981;">✓ Verified Record</span></div>
+              <div style="font-weight: 700; color: #ffffff;">༒ Endeavour ༒ <span style="font-size: 0.75rem; color: #10b981;">✓ Verified Record</span></div>
               <div style="font-size: 0.8rem; color: #cbd5e1;">FID: 16278053 • Furnace: FC 10 • Power: 942.5M • State 266</div>
             </div>
           `;
