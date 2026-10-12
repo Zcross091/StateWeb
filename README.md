@@ -1,13 +1,13 @@
-# ❄️ State 266 Portal | Whiteout Survival
+# State 266 Portal | Whiteout Survival
 > The official community portal for **Whiteout Survival State #266**.
 
 [![Deploy to GitHub Pages](https://github.com/Zcross091/StateWeb/actions/workflows/deploy.yml/badge.svg)](https://github.com/Zcross091/StateWeb/actions/workflows/deploy.yml)
 
-🌐 **Live Website:** [https://zcross091.github.io/StateWeb/](https://zcross091.github.io/StateWeb/)
+**Live Website:** [https://zcross091.github.io/StateWeb/](https://zcross091.github.io/StateWeb/)
 
 ---
 
-## 🏔️ About State 266 & Endeavour
+## About State 266 & Endeavour
 - **In-Game Name:** `[AVM] ༒ Endeavour ༒`
 - **Player ID:** `16278053`
 - **Combat Stats:** **942.5M Power** • **157.5M PvP Kills**
@@ -18,17 +18,17 @@
 
 ---
 
-## 🛡️ The Big 3 Active Alliances
+## The Big 3 Active Alliances
 
 | Crest | Tag & Name | Rank | Leader / Contact | Power | Members | Focus & Notes |
 | :---: | :--- | :---: | :--- | :---: | :---: | :--- |
-| 🐺 | **[AVM] ༒ SHAÐØW ༒ WØLVES ༒** | #1 | `༒ Endeavour ༒ (Duke Ragnar)` / `༒ ZØRØ ༒AvM` | **76.10 B** | 97/100 | Apex fighting force, Sunfire Castle rally spearhead. |
-| 🐾 | **[SOK] SilenceOfKittens** | #2 | `TrulyBee` | **43.47 B** | 73/100 | High-harmony community, fortress defense, loyal & friendly. |
-| ⚖️ | **[ORA] OriginDesAstres** | #3 | `LululaKastagne` | **34.86 B** | 83/100 | Tactical English-speaking elite, 13:00 & 19:00 UTC event slots, FC5+ req. |
+| AVM | **[AVM] ༒ SHAÐØW ༒ WØLVES ༒** | #1 | `༒ Endeavour ༒ (Duke Ragnar)` / `༒ ZØRØ ༒AvM` | **76.10 B** | 97/100 | Apex fighting force, Sunfire Castle rally spearhead. |
+| SOK | **[SOK] SilenceOfKittens** | #2 | `TrulyBee` | **43.47 B** | 73/100 | High-harmony community, fortress defense, loyal & friendly. |
+| ORA | **[ORA] OriginDesAstres** | #3 | `LululaKastagne` | **34.86 B** | 83/100 | Tactical English-speaking elite, 13:00 & 19:00 UTC event slots, FC5+ req. |
 
 ---
 
-## ✨ Features
+## Features
 
 1. **Atmospheric Glacial & Ember Engine**:
    - Interactive HTML5 canvas particle snowfall with rising furnace embers.
@@ -49,7 +49,7 @@
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 No npm dependencies or compilation steps required—pure modern HTML5, CSS3, and JavaScript:
 
@@ -66,7 +66,7 @@ No npm dependencies or compilation steps required—pure modern HTML5, CSS3, and
 
 ---
 
-## 🌐 GitHub Pages Deployment
+## GitHub Pages Deployment
 
 The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys to **GitHub Pages** whenever changes are pushed to `main`.
 
