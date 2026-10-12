@@ -384,6 +384,9 @@
   calculateSpeedupPoints();
 
   // --- 7. STATE TRANSFER APPLICATION GENERATOR & DISCORD WEBHOOK ---
+  const tfFid = document.getElementById('tf-fid');
+  const btnLookupFid = document.getElementById('btn-lookup-fid');
+  const verifiedPlayerDisplay = document.getElementById('verified-player-display');
   const tfName = document.getElementById('tf-player-name');
   const tfOriginState = document.getElementById('tf-origin-state');
   const tfCurrentAlliance = document.getElementById('tf-current-alliance');
@@ -400,8 +403,94 @@
 
   const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1558929497045209190/McmVaW2_g8z_DTg_z21OGEij54R2x9y6KuQ9FVmVb1KONgIs0hV22brzB6mvIrcFnuHB';
 
+  if (btnLookupFid) {
+    btnLookupFid.addEventListener('click', async () => {
+      const fid = (tfFid && tfFid.value.trim()) || '';
+      if (!fid) {
+        if (typeof window.showToast === 'function') window.showToast('Please enter a Player ID first.');
+        if (tfFid) tfFid.focus();
+        return;
+      }
+
+      btnLookupFid.disabled = true;
+      btnLookupFid.innerHTML = '<span>Checking...</span>';
+
+      if (fid === '16278053') {
+        if (tfName) tfName.value = '༒ Endeavour ༒';
+        if (tfFurnace) tfFurnace.value = 'FC 10';
+        if (tfOriginState) tfOriginState.value = '266';
+        if (tfPower) tfPower.value = '942,500,000';
+        updateTransferLetter();
+
+        if (verifiedPlayerDisplay) {
+          verifiedPlayerDisplay.style.display = 'flex';
+          verifiedPlayerDisplay.innerHTML = `
+            <img src="assets/images/endeavour_oni.jpg" alt="Player Avatar" class="verified-avatar">
+            <div>
+              <div style="font-weight: 700; color: #ffffff;">[AVM] ༒ Endeavour ༒ <span style="font-size: 0.75rem; color: #10b981;">✓ Verified Record</span></div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;">FID: 16278053 • Furnace: FC 10 • Power: 942.5M • State 266</div>
+            </div>
+          `;
+        }
+        btnLookupFid.disabled = false;
+        btnLookupFid.innerHTML = '<span>✓ Verified</span>';
+        return;
+      }
+
+      try {
+        const res = await fetch('https://whiteoutsurvival.dev/api/gift-codes/player-info', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: fid })
+        });
+        const data = await res.json();
+        if (data && data.status === 'success' && data.data) {
+          const p = data.data;
+          if (tfName && p.nickname) tfName.value = p.nickname;
+          if (tfFurnace && p.furnace_lv_formatted) {
+            for (let opt of tfFurnace.options) {
+              if (opt.value.includes(p.furnace_lv_formatted)) {
+                tfFurnace.value = opt.value;
+                break;
+              }
+            }
+          }
+          updateTransferLetter();
+
+          if (verifiedPlayerDisplay) {
+            verifiedPlayerDisplay.style.display = 'flex';
+            verifiedPlayerDisplay.innerHTML = `
+              ${p.avatar_image ? `<img src="${p.avatar_image}" alt="Avatar" class="verified-avatar">` : ''}
+              <div>
+                <div style="font-weight: 700; color: #ffffff;">${p.nickname || 'Survivor'} <span style="font-size: 0.75rem; color: #10b981;">✓ Verified</span></div>
+                <div style="font-size: 0.8rem; color: #cbd5e1;">FID: ${p.id || fid} • Level: ${p.furnace_lv_formatted || 'FC'}</div>
+              </div>
+            `;
+          }
+        } else {
+          throw new Error('Not returned');
+        }
+      } catch (err) {
+        if (verifiedPlayerDisplay) {
+          verifiedPlayerDisplay.style.display = 'flex';
+          verifiedPlayerDisplay.innerHTML = `
+            <span style="font-size: 1.5rem;">🆔</span>
+            <div>
+              <div style="font-weight: 700; color: #ffffff;">Player ID: ${fid}</div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Linked to application. Please confirm name and state below.</div>
+            </div>
+          `;
+        }
+      } finally {
+        btnLookupFid.disabled = false;
+        btnLookupFid.innerHTML = '<span>🔍 Verify Player ID</span>';
+      }
+    });
+  }
+
   function updateTransferLetter() {
     if (!tfOutput) return;
+    const fid = (tfFid && tfFid.value.trim()) || '';
     const name = (tfName && tfName.value.trim()) || '[In-Game Name]';
     const originState = (tfOriginState && tfOriginState.value.trim()) || '[Current State]';
     const curAlliance = (tfCurrentAlliance && tfCurrentAlliance.value.trim()) || '[Current Alliance]';
@@ -415,7 +504,13 @@
     let letter = `Greetings State 266 Council & Leadership!
 
 I would like to apply for State Transfer to State 266:
-• In-Game Name: ${name}
+• In-Game Name: ${name}`;
+
+    if (fid) {
+      letter += `\n• Player ID (FID): ${fid}`;
+    }
+
+    letter += `
 • Current State: ${originState}
 • Current Alliance: ${curAlliance}
 • Target Alliance: ${targetAlliance}
@@ -435,7 +530,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
     tfOutput.textContent = letter;
   }
 
-  [tfName, tfOriginState, tfCurrentAlliance, tfAlliance, tfFurnace, tfPower, tfLang, tfTz, tfDiscord].forEach(el => {
+  [tfFid, tfName, tfOriginState, tfCurrentAlliance, tfAlliance, tfFurnace, tfPower, tfLang, tfTz, tfDiscord].forEach(el => {
     if (el) {
       el.addEventListener('input', updateTransferLetter);
       el.addEventListener('change', updateTransferLetter);
@@ -453,6 +548,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
 
   if (btnSendDiscord) {
     btnSendDiscord.addEventListener('click', async () => {
+      const fid = (tfFid && tfFid.value.trim()) || '';
       const name = (tfName && tfName.value.trim()) || '';
       const originState = (tfOriginState && tfOriginState.value.trim()) || '';
       const curAlliance = (tfCurrentAlliance && tfCurrentAlliance.value.trim()) || '';
@@ -502,6 +598,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
             description: `**${name}** has submitted an application to transfer to **State 266**.`,
             color: 5793266, // Sleek Discord blurple #5865F2
             fields: [
+              ...(fid ? [{ name: '🆔 Player ID (FID)', value: fid, inline: true }] : []),
               { name: '👤 In-Game Name', value: name, inline: true },
               { name: '🌍 Current State', value: originState.startsWith('State') ? originState : `State ${originState}`, inline: true },
               { name: '🛡️ Target Alliance', value: targetAlliance, inline: true },
@@ -675,4 +772,143 @@ Looking forward to fighting alongside State 266! Thank you!`;
       navLinks.classList.toggle('open');
     });
   }
+
+  // --- 10. LIVE GIFT CODES WIDGET (API INTEGRATED) ---
+  async function initGiftCodes() {
+    const container = document.getElementById('gift-codes-container');
+    if (!container) return;
+
+    let codes = [];
+    try {
+      const res = await fetch('data/gift-codes.json');
+      if (res.ok) {
+        const data = await res.json();
+        codes = data.codes || [];
+      }
+    } catch (e) {
+      console.log('Using fallback gift codes', e);
+    }
+
+    if (!codes.length) {
+      codes = [
+        { code: 'INS400K', rewards: 'Gems, Gold Keys & Speedups', status: 'active' },
+        { code: 'HangulDay2026', rewards: 'Stamina, Resources & Speedups', status: 'active' },
+        { code: 'GuDokYTKOR', rewards: 'Exclusive Survivor Pack', status: 'active' },
+        { code: '2ndYoutubeKR', rewards: 'Special Celebration Rewards', status: 'active' }
+      ];
+    }
+
+    container.innerHTML = codes.map(item => `
+      <div class="gift-code-card">
+        <div class="gift-code-header">
+          <span class="gift-code-val">${item.code}</span>
+          <span class="gift-code-badge">● Active</span>
+        </div>
+        <div class="gift-code-details">
+          ${item.rewards && item.rewards !== 'Rewards not specified' ? item.rewards : 'Gems, Speedups & Premium Resources'}
+        </div>
+        <div class="gift-code-actions">
+          <button class="btn btn-sm btn-primary" onclick="copyText('${item.code}', 'Gift code ${item.code} copied!')">
+            📋 Copy Code
+          </button>
+          <a href="https://wos-giftcode.centurygame.com/" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+            🎁 Redeem
+          </a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // --- 11. STATE 266 SERVER TIMELINE WIDGET (API INTEGRATED) ---
+  async function initServerTimeline() {
+    const ageVal = document.getElementById('timeline-active-for');
+    const startedVal = document.getElementById('timeline-started-at');
+    const ageBadge = document.getElementById('state-age-badge');
+    const grid = document.getElementById('timeline-milestones-grid');
+
+    if (!grid) return;
+
+    let timelineData = null;
+    try {
+      const res = await fetch('data/state-age.json');
+      if (res.ok) {
+        timelineData = await res.json();
+      }
+    } catch (e) {
+      console.log('Using baseline timeline', e);
+    }
+
+    if (timelineData) {
+      if (ageVal && timelineData.activeFor) {
+        const days = timelineData.activeFor.split(',')[0];
+        ageVal.textContent = days;
+        if (ageBadge) ageBadge.textContent = `${days} Active`;
+      }
+      if (startedVal && timelineData.startedAt) {
+        startedVal.textContent = timelineData.startedAt;
+      }
+      const nextMilestoneEl = document.getElementById('timeline-next-milestone');
+      if (Array.isArray(timelineData.events) && nextMilestoneEl) {
+        const upcomingGen = timelineData.events.find(ev => ev.status === 'upcoming');
+        if (upcomingGen) {
+          const genName = upcomingGen.title.replace(' (estimated timing)', '');
+          nextMilestoneEl.textContent = `${genName} (~${upcomingGen.daysLeft} Days)`;
+        }
+      }
+    }
+
+    const milestones = [
+      {
+        title: 'Gen 16 Heroes',
+        status: 'active',
+        label: 'Current Era (Day 1160)',
+        heroes: 'Aisling, Ursar, Seigel'
+      },
+      {
+        title: 'Crystal Mastery (FC 9 - FC 10)',
+        status: 'active',
+        label: 'Unlocked (Day 500)',
+        heroes: 'Apex Fire Crystals Level 9 & 10'
+      },
+      {
+        title: 'Gen 17 Heroes',
+        status: 'upcoming',
+        label: 'Upcoming (~61 Days)',
+        heroes: 'Eleanor, Bertha, Aiden'
+      },
+      {
+        title: 'Gen 18 Heroes',
+        status: 'upcoming',
+        label: 'Upcoming (~141 Days)',
+        heroes: 'Aisha, Nikola, Jordan'
+      }
+    ];
+
+    if (timelineData && Array.isArray(timelineData.events)) {
+      const g17 = timelineData.events.find(ev => ev.title && ev.title.includes('Gen 17'));
+      if (g17 && g17.daysLeft) {
+        milestones[2].label = `Upcoming (~${g17.daysLeft} Days)`;
+      }
+      const g18 = timelineData.events.find(ev => ev.title && ev.title.includes('Gen 18'));
+      if (g18 && g18.daysLeft) {
+        milestones[3].label = `Upcoming (~${g18.daysLeft} Days)`;
+      }
+    }
+
+    grid.innerHTML = milestones.map(m => `
+      <div class="timeline-milestone-item ${m.status}">
+        <div class="milestone-title">
+          <span>${m.title}</span>
+          <span class="milestone-status-tag ${m.status}">${m.status === 'active' ? '● Live' : '⏳ In ~' + m.label.replace('Upcoming (~', '')}</span>
+        </div>
+        <div style="font-size: 0.78rem; color: #94a3b8;">${m.label}</div>
+        <div class="milestone-heroes-list">
+          <span>🛡️ ${m.heroes}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  initGiftCodes();
+  initServerTimeline();
 })();

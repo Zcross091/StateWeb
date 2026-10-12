@@ -1,0 +1,47 @@
+{
+  "attribution": {
+    "provider": "WhiteoutSurvival.dev",
+    "website": "https://whiteoutsurvival.dev",
+    "credit": "Data provided by WhiteoutSurvival.dev. Please credit https://whiteoutsurvival.dev when using this API publicly."
+  },
+  "codes": [
+    {
+      "code": "SPORTSDAY26",
+      "rewards": "Rewards not specified",
+      "expiry": "Unknown",
+      "description": "",
+      "dateAdded": "2026-10-12T09:12:09.779Z",
+      "status": "active",
+      "isActive": true
+    },
+    {
+      "code": "INS400K",
+      "rewards": "Rewards not specified",
+      "expiry": "Unknown",
+      "description": "",
+      "dateAdded": "2026-10-10T12:03:47.503Z",
+      "status": "active",
+      "isActive": true
+    },
+    {
+      "code": "GuDokYTKOR",
+      "rewards": "Rewards not specified",
+      "expiry": "Unknown",
+      "description": "",
+      "dateAdded": "2026-08-07T06:58:15.951Z",
+      "status": "active",
+      "isActive": true
+    },
+    {
+      "code": "2ndYoutubeKR",
+      "rewards": "Rewards not specified",
+      "expiry": "Unknown",
+      "description": "",
+      "dateAdded": "2026-07-05T12:02:35.906Z",
+      "status": "active",
+      "isActive": true
+    }
+  ],
+  "lastUpdated": "2026-10-12T12:14:40.299Z",
+  "refreshAfterSeconds": 30
+}

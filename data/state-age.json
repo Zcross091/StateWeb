@@ -1,0 +1,747 @@
+{
+  "attribution": {
+    "provider": "WhiteoutSurvival.dev",
+    "website": "https://whiteoutsurvival.dev",
+    "credit": "Data provided by WhiteoutSurvival.dev. Please credit https://whiteoutsurvival.dev when using this API publicly."
+  },
+  "state": "266",
+  "activeFor": "1179 days, 1 hours, 39 minutes",
+  "startedAt": "21/07/2023 - 10:35:03 UTC",
+  "sourceUpdatedAt": "2026-10-07T13:26:46+00:00",
+  "recentlyOpenedStates": [],
+  "events": [
+    {
+      "title": "Initial Heroes",
+      "dayLabel": "Day 0",
+      "day": 0,
+      "status": "unlocked",
+      "note": "Information about Generations for each day is now available. The list of Heroes will keep growing over time. There's a lot to do and only two hands to handle it 😉",
+      "items": [
+        {
+          "name": "Zinman",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/zinman-150x150.png"
+        },
+        {
+          "name": "Jeronimo",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Jeronimo-150x150.jpg"
+        },
+        {
+          "name": "Natalia",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/09/Natalia-150x150.jpg"
+        },
+        {
+          "name": "Molly",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/06/Molly-150x150.png"
+        },
+        {
+          "name": "Ling Xue",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/ling-xue-150x150.jpg"
+        },
+        {
+          "name": "Lumak Bokan",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/lumak-bokan-150x150.png"
+        },
+        {
+          "name": "Seo-yoon",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/seo-yoon-150x150.jpg"
+        },
+        {
+          "name": "Jasser",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/jasser-150x150.jpg"
+        },
+        {
+          "name": "Gina",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/Gina-150x150.png"
+        },
+        {
+          "name": "Bahiti",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/bahiti-150x150.png"
+        },
+        {
+          "name": "Patrick",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Patrick-150x150.jpg"
+        },
+        {
+          "name": "Sergey",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/06/sergey-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Tundra",
+      "dayLabel": "Day 14",
+      "day": 14,
+      "status": "unlocked",
+      "note": "Opened Tundra territory for Aliances",
+      "items": [
+        {
+          "name": "Tundra",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/tundra.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Arena opponent Update",
+      "dayLabel": "Monday close to day 34",
+      "day": 34,
+      "status": "unlocked",
+      "note": "Opponent pool enlarged by nearby servers.",
+      "items": [
+        {
+          "name": "Arena opponent Update",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/arena.png"
+        }
+      ]
+    },
+    {
+      "title": "Fertile Land",
+      "dayLabel": "Day 39",
+      "day": 39,
+      "status": "unlocked",
+      "note": "Opened Fertile Land",
+      "items": [
+        {
+          "name": "Fertile Land",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/fertile-land.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 2 Heroes",
+      "dayLabel": "Day 40",
+      "day": 40,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Alonso",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Alonso-150x150.jpg"
+        },
+        {
+          "name": "Philly",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Philly-150x150.jpg"
+        },
+        {
+          "name": "Flint",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Flint-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Sunfire Castle",
+      "dayLabel": "Day 53",
+      "day": 53,
+      "status": "unlocked",
+      "note": "Sunfire Castle becomes the battleground for state alliances. Following the election of a President, ministers can be appointed. The Sunfire Castle Battle happens on Saturday.",
+      "items": [
+        {
+          "name": "Sunfire Castle",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/sunfire-castle.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "First Pets Update",
+      "dayLabel": "Day 54",
+      "day": 54,
+      "status": "unlocked",
+      "note": "(also needs furnace 18 to unlock)",
+      "items": [
+        {
+          "name": "Musk Ox",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Musk_Ox-150x150.jpg"
+        },
+        {
+          "name": "Arctic Wolf",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Artic_Wolf-150x150.jpg"
+        },
+        {
+          "name": "Cave Hyena",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Cave_Hyena-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Fire Crystal Age",
+      "dayLabel": "Day 60",
+      "day": 60,
+      "status": "unlocked",
+      "note": "Fire Crystal 1-3 Completion of the 'Road to Discovery' Monument unlocks the Fire Crystal Age, granting players at Furnace level 30 the ability to enhance their buildings further.",
+      "items": [
+        {
+          "name": "Crystal 1",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_1.png"
+        },
+        {
+          "name": "Crystal 2",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_2.png"
+        },
+        {
+          "name": "Crystal 3",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_3.png"
+        }
+      ]
+    },
+    {
+      "title": "SVS and KOI <3",
+      "dayLabel": "Day 80",
+      "day": 80,
+      "status": "unlocked",
+      "note": "The events run on separate timelines. If your server is below day 80 (12 weeks) when they begin, you'll experience another HOC.",
+      "items": [
+        {
+          "name": "Sate of Power (SVS)",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/HOC-1.png"
+        },
+        {
+          "name": "King of Icefield",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/KOI.png"
+        }
+      ]
+    },
+    {
+      "title": "Second Pets Update",
+      "dayLabel": "Day 90",
+      "day": 90,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Titan Roc",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Titan_Roc-150x150.jpg"
+        },
+        {
+          "name": "Giant Tapir",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Giant_Tapir-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 3 Heroes",
+      "dayLabel": "Day 120",
+      "day": 120,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Greg",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Greg-150x150.jpg"
+        },
+        {
+          "name": "Mia",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Mia-150x150.jpg"
+        },
+        {
+          "name": "Logan",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Logan-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Third Pets Update",
+      "dayLabel": "Day 140",
+      "day": 140,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Giant Elk",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Giant_Elk-150x150.jpg"
+        },
+        {
+          "name": "Snow Leopard",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Snow_Leopard-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Crystal Infrastructure",
+      "dayLabel": "Day 150",
+      "day": 150,
+      "status": "unlocked",
+      "note": "Fire Crystal 4-5 and Crystal laboratory unlock",
+      "items": [
+        {
+          "name": "Crystal 4",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_4.png"
+        },
+        {
+          "name": "Crystal 5",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_5.png"
+        },
+        {
+          "name": "Crystal Laboratory",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal-laboratory-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Legendary Equipment",
+      "dayLabel": "Day 180",
+      "day": 180,
+      "status": "unlocked",
+      "note": "Chief Legendary Gear Unlock - try our Chief Gear Calculator .",
+      "items": [
+        {
+          "name": "Legendary Equipment",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Conquerors_Candence-150x150.png"
+        },
+        {
+          "name": "Legendary Equipment 2",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Dynastic_Ward-150x150.png"
+        },
+        {
+          "name": "Legendary Equipment 3",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Finite_Infinitus-150x150.png"
+        },
+        {
+          "name": "Legendary Equipment 4",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Solaris_Incandescence-150x150.png"
+        },
+        {
+          "name": "Legendary Equipment 5",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Frost_Coronet-150x150.png"
+        },
+        {
+          "name": "Legendary Equipment 6",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Golden_Zeal-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 4 Heroes",
+      "dayLabel": "Day 195",
+      "day": 195,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Lynn",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Lynn-150x150.jpg"
+        },
+        {
+          "name": "Reina",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Reina-150x150.jpg"
+        },
+        {
+          "name": "Ahmose",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Ahmose-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Fourth Pets Update",
+      "dayLabel": "Day 200",
+      "day": 200,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Snow Ape",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Snow_Ape-150x150.jpg"
+        },
+        {
+          "name": "Cave Lion",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Cave_Lion-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "War Academy Update",
+      "dayLabel": "Day 220",
+      "day": 220,
+      "status": "unlocked",
+      "note": "War Academy, Fire Crystal Tech and T11 Troops Unlock",
+      "items": [
+        {
+          "name": "War Academy",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/war-academy-150x150.png"
+        },
+        {
+          "name": "Fire Crystal Shard",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Fire_Crystal_Shard.png"
+        },
+        {
+          "name": "Infantry T11",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Infantry_T11-150x150.png"
+        },
+        {
+          "name": "Lancer T11",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Lancer_T11-150x150.png"
+        },
+        {
+          "name": "MarksMan T11",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/MarksMan_T11-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 5 Heroes",
+      "dayLabel": "Day 270",
+      "day": 270,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Gwen",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Gwen-150x150.jpg"
+        },
+        {
+          "name": "Norah",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Norah-150x150.jpg"
+        },
+        {
+          "name": "Hector",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Hector-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Fifth Pets Update",
+      "dayLabel": "Day 280",
+      "day": 280,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Iron Rhino",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Iron_Rhino-150x150.jpg"
+        },
+        {
+          "name": "Saber-tooth Tiger",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Saber-tooth_Tiger-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Crystal Update",
+      "dayLabel": "Day 315",
+      "day": 315,
+      "status": "unlocked",
+      "note": "Fire Crystal Building level 6-8 and Refined Fire Crystal Unlock",
+      "items": [
+        {
+          "name": "Crystal 6",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_6.png"
+        },
+        {
+          "name": "Crystal 7",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_7.png"
+        },
+        {
+          "name": "Crystal 8",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_8.png"
+        },
+        {
+          "name": "Refined Fire Crystal",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Refined_fire-crystal-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 6 Heroes",
+      "dayLabel": "Day 360",
+      "day": 360,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Wayne",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Wayne-150x150.jpg"
+        },
+        {
+          "name": "Renee",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Renee-150x150.jpg"
+        },
+        {
+          "name": "Wu Ming",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Wuming-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mammoth Update",
+      "dayLabel": "Day 370",
+      "day": 370,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Mammoth",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Mammoth-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 7 Heroes",
+      "dayLabel": "Day 440",
+      "day": 440,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Bradley",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Bradley-150x150.jpg"
+        },
+        {
+          "name": "Gordon",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Gordon-150x150.jpg"
+        },
+        {
+          "name": "Edith",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Edith-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Crystal Mastery",
+      "dayLabel": "Day 500",
+      "day": 500,
+      "status": "unlocked",
+      "note": "Fire Crystal level 9-10 Unlock",
+      "items": [
+        {
+          "name": "Crystal 9",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_9.png"
+        },
+        {
+          "name": "Crystal 10",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/crystal_10.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 8 Heroes",
+      "dayLabel": "Day 520",
+      "day": 520,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Hendrik",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Hendrik-150x150.jpg"
+        },
+        {
+          "name": "Sonya",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Sonya-150x150.jpg"
+        },
+        {
+          "name": "Gatot",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Gatot-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 9 Heroes",
+      "dayLabel": "Day 600",
+      "day": 600,
+      "status": "unlocked",
+      "note": "",
+      "items": [
+        {
+          "name": "Xura",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Xura-150x150.jpg"
+        },
+        {
+          "name": "Fred",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Fred-150x150.jpg"
+        },
+        {
+          "name": "Magnus",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Magnus-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 10 Heroes (estimated timing)",
+      "dayLabel": "Day 680",
+      "day": 680,
+      "status": "unlocked",
+      "note": "Approx. day 680. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Blanchette",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Blanchette-150x150.jpg"
+        },
+        {
+          "name": "Freya",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Freya-150x150.jpg"
+        },
+        {
+          "name": "Gregory",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Gregory-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 11 Heroes (estimated timing)",
+      "dayLabel": "Day 760",
+      "day": 760,
+      "status": "unlocked",
+      "note": "Approx. day 760. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Rufus",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Rufus-150x150.png"
+        },
+        {
+          "name": "Lloyd",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Lloyd-150x150.png"
+        },
+        {
+          "name": "Eleonora",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Eleonora_Gold-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 12 Heroes (estimated timing)",
+      "dayLabel": "Day 840",
+      "day": 840,
+      "status": "unlocked",
+      "note": "Approx. day 840. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Ligeia",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Ligeia-150x150.jpg"
+        },
+        {
+          "name": "Karol",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Karol-150x150.jpg"
+        },
+        {
+          "name": "Hervor",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Hervor-150x150.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 13 Heroes (estimated timing)",
+      "dayLabel": "Day 920",
+      "day": 920,
+      "status": "unlocked",
+      "note": "Approx. day 920. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Vulcanus",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Vulcanus.jpg"
+        },
+        {
+          "name": "Flora",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Flora.jpg"
+        },
+        {
+          "name": "Gisela",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2025/07/Gisela.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gen 14 Heroes (estimated timing)",
+      "dayLabel": "Day 1000",
+      "day": 1000,
+      "status": "unlocked",
+      "note": "Approx. day 1000. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Cara",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/cara-150x150.png"
+        },
+        {
+          "name": "Dominic",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/dominic-150x150.png"
+        },
+        {
+          "name": "Elif",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/elif-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 15 Heroes (estimated timing)",
+      "dayLabel": "Day 1080",
+      "day": 1080,
+      "status": "unlocked",
+      "note": "Approx. day 1080. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Viveca",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/viveca-150x150.png"
+        },
+        {
+          "name": "Estrella",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/estrella-150x150.png"
+        },
+        {
+          "name": "Hank",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/hank-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 16 Heroes (estimated timing)",
+      "dayLabel": "Day 1160",
+      "day": 1160,
+      "status": "unlocked",
+      "note": "Approx. day 1160. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Aisling",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/aisling-150x150.png"
+        },
+        {
+          "name": "Ursar",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/ursar-150x150.png"
+        },
+        {
+          "name": "Seigel",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/seigel-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 17 Heroes (estimated timing)",
+      "dayLabel": "Day 1240",
+      "day": 1240,
+      "status": "upcoming",
+      "daysLeft": 61,
+      "note": "Approx. day 1240. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Eleanor",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/eleanor-150x150.png"
+        },
+        {
+          "name": "Bertha",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/bertha-150x150.png"
+        },
+        {
+          "name": "Aiden",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/aiden-150x150.png"
+        }
+      ]
+    },
+    {
+      "title": "Gen 18 Heroes (estimated timing)",
+      "dayLabel": "Day 1320",
+      "day": 1320,
+      "status": "upcoming",
+      "daysLeft": 141,
+      "note": "Approx. day 1320. This is an estimated schedule; availability may vary by state and event cycle. Check your in-game announcements.",
+      "items": [
+        {
+          "name": "Aisha",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/aisha-icon-150x150.jpg"
+        },
+        {
+          "name": "Nikola",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/nikola-icon-150x150.jpg"
+        },
+        {
+          "name": "Jordan",
+          "image": "https://whiteoutsurvival.pl/wp-content/uploads/2026/10/jordan-icon-150x150.jpg"
+        }
+      ]
+    }
+  ]
+}
