@@ -47,7 +47,7 @@
       document.execCommand('copy');
       showToast(label);
     } catch (e) {
-      showToast('Copy failed, please select manually', '⚠️');
+      showToast('Copy failed, please select manually', '!');
     }
     document.body.removeChild(tempInput);
   }
@@ -384,7 +384,7 @@
         if (verifiedPlayerDisplay) {
           verifiedPlayerDisplay.style.display = 'flex';
           verifiedPlayerDisplay.innerHTML = `
-            <span style="font-size: 1.5rem;">🆔</span>
+            <span style="font-weight: 800; font-family: var(--font-heading); color: var(--frost-cyan); font-size: 1.1rem;">ID</span>
             <div>
               <div style="font-weight: 700; color: #ffffff;">Player ID: ${fid}</div>
               <div style="font-size: 0.8rem; color: #94a3b8;">Linked to application. Please confirm name and state below.</div>
@@ -393,7 +393,7 @@
         }
       } finally {
         btnLookupFid.disabled = false;
-        btnLookupFid.innerHTML = '<span>🔍 Verify Player ID</span>';
+        btnLookupFid.innerHTML = '<span>Verify Player ID</span>';
       }
     });
   }
@@ -473,7 +473,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
         if (tfStatusMsg) {
           tfStatusMsg.className = 'transfer-status-msg error';
           tfStatusMsg.style.display = 'flex';
-          tfStatusMsg.textContent = '⚠️ Please enter your In-Game Name before submitting.';
+          tfStatusMsg.textContent = 'Please enter your In-Game Name before submitting.';
         }
         if (tfName) tfName.focus();
         return;
@@ -483,7 +483,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
         if (tfStatusMsg) {
           tfStatusMsg.className = 'transfer-status-msg error';
           tfStatusMsg.style.display = 'flex';
-          tfStatusMsg.textContent = '⚠️ Please specify your Current State # (e.g. 150).';
+          tfStatusMsg.textContent = 'Please specify your Current State # (e.g. 150).';
         }
         if (tfOriginState) tfOriginState.focus();
         return;
@@ -491,7 +491,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
 
       btnSendDiscord.disabled = true;
       const originalText = btnSendDiscord.innerHTML;
-      btnSendDiscord.innerHTML = '<span>📡 Sending to Discord...</span>';
+      btnSendDiscord.innerHTML = '<span>Sending to Discord...</span>';
 
       if (tfStatusMsg) {
         tfStatusMsg.className = 'transfer-status-msg loading';
@@ -504,19 +504,19 @@ Looking forward to fighting alongside State 266! Thank you!`;
         avatar_url: 'https://zcross091.github.io/StateWeb/assets/images/state266_logo.jpg',
         embeds: [
           {
-            title: '📥 State Transfer Application',
+            title: 'State Transfer Application',
             description: `**${name}** has submitted an application to transfer to **State 266**.`,
             color: 5793266, // Sleek Discord blurple #5865F2
             fields: [
-              ...(fid ? [{ name: '🆔 Player ID (FID)', value: fid, inline: true }] : []),
-              { name: '👤 In-Game Name', value: name, inline: true },
-              { name: '🌍 Current State', value: originState.startsWith('State') ? originState : `State ${originState}`, inline: true },
-              { name: '🛡️ Target Alliance', value: targetAlliance, inline: true },
-              { name: '🏷️ Current Alliance', value: curAlliance || 'None / Solo', inline: true },
-              { name: '🏰 Furnace Level', value: furnace, inline: true },
-              { name: '⚡ Total Power', value: power || 'Not specified', inline: true },
-              { name: '🌐 Language / Timezone', value: `${lang} • ${tz}`, inline: true },
-              { name: '💬 Discord Handle', value: discord || 'Not provided', inline: true }
+              ...(fid ? [{ name: 'Player ID (FID)', value: fid, inline: true }] : []),
+              { name: 'In-Game Name', value: name, inline: true },
+              { name: 'Current State', value: originState.startsWith('State') ? originState : `State ${originState}`, inline: true },
+              { name: 'Target Alliance', value: targetAlliance, inline: true },
+              { name: 'Current Alliance', value: curAlliance || 'None / Solo', inline: true },
+              { name: 'Furnace Level', value: furnace, inline: true },
+              { name: 'Total Power', value: power || 'Not specified', inline: true },
+              { name: 'Language / Timezone', value: `${lang} • ${tz}`, inline: true },
+              { name: 'Discord Handle', value: discord || 'Not provided', inline: true }
             ],
             footer: {
               text: 'State 266 Official Portal'
@@ -536,11 +536,11 @@ Looking forward to fighting alongside State 266! Thank you!`;
         });
 
         if (response.ok) {
-          btnSendDiscord.innerHTML = '<span>✅ Application Sent!</span>';
+          btnSendDiscord.innerHTML = '<span>Application Sent!</span>';
           if (tfStatusMsg) {
             tfStatusMsg.className = 'transfer-status-msg success';
             tfStatusMsg.style.display = 'flex';
-            tfStatusMsg.textContent = '✅ Application sent successfully to our Discord channel! The leadership team will review it.';
+            tfStatusMsg.textContent = 'Application sent successfully to our Discord channel! The leadership team will review it.';
           }
           if (typeof window.showToast === 'function') {
             window.showToast('Application sent to State 266 Discord!');
@@ -560,7 +560,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
         if (tfStatusMsg) {
           tfStatusMsg.className = 'transfer-status-msg error';
           tfStatusMsg.style.display = 'flex';
-          tfStatusMsg.textContent = '⚠️ Could not send to Discord directly. Please use "Copy Application Letter" below to send manually.';
+          tfStatusMsg.textContent = 'Could not send to Discord directly. Please use "Copy Application Letter" below to send manually.';
         }
       }
     });
@@ -624,23 +624,23 @@ Looking forward to fighting alongside State 266! Thank you!`;
         </div>
         <div class="ingame-stats-list" style="margin-bottom: 1.25rem;">
           <div class="ingame-stat-row">
-            <span class="stat-label-with-icon">⚡ Total Power:</span>
+            <span class="stat-label-with-icon">Total Power:</span>
             <span class="stat-value-bold power">${data.power}</span>
           </div>
           <div class="ingame-stat-row">
-            <span class="stat-label-with-icon">👑 Alliance Leader:</span>
+            <span class="stat-label-with-icon">Alliance Leader:</span>
             <span class="stat-value-bold">${data.leader}</span>
           </div>
           <div class="ingame-stat-row">
-            <span class="stat-label-with-icon">🛡️ Recruitment Officer:</span>
+            <span class="stat-label-with-icon">Recruitment Officer:</span>
             <span class="stat-value-bold">${data.recruiter}</span>
           </div>
           <div class="ingame-stat-row">
-            <span class="stat-label-with-icon">👥 Members:</span>
+            <span class="stat-label-with-icon">Members:</span>
             <span class="stat-value-bold">${data.members}</span>
           </div>
           <div class="ingame-stat-row">
-            <span class="stat-label-with-icon">🌐 Primary Language:</span>
+            <span class="stat-label-with-icon">Primary Language:</span>
             <span class="stat-value-bold">${data.languages}</span>
           </div>
         </div>
@@ -649,7 +649,7 @@ Looking forward to fighting alongside State 266! Thank you!`;
         </div>
         <div style="display: flex; gap: 0.75rem;">
           <button class="btn btn-primary" style="flex: 1;" onclick="copyText('${data.contact}', 'Contact ID copied to clipboard!')">
-            📋 Copy Contact ID
+            Copy Contact ID
           </button>
           <button class="btn btn-secondary" onclick="closeAllianceModal()">Close</button>
         </div>
@@ -719,10 +719,10 @@ Looking forward to fighting alongside State 266! Thank you!`;
         </div>
         <div class="gift-code-actions">
           <button class="btn btn-sm btn-primary" onclick="copyText('${item.code}', 'Gift code ${item.code} copied!')">
-            📋 Copy Code
+            Copy Code
           </button>
           <a href="https://wos-giftcode.centurygame.com/" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-            🎁 Redeem
+            Redeem
           </a>
         </div>
       </div>
@@ -809,11 +809,11 @@ Looking forward to fighting alongside State 266! Thank you!`;
       <div class="timeline-milestone-item ${m.status}">
         <div class="milestone-title">
           <span>${m.title}</span>
-          <span class="milestone-status-tag ${m.status}">${m.status === 'active' ? '● Live' : '⏳ In ~' + m.label.replace('Upcoming (~', '')}</span>
+          <span class="milestone-status-tag ${m.status}">${m.status === 'active' ? '● Live' : 'In ~' + m.label.replace('Upcoming (~', '')}</span>
         </div>
         <div style="font-size: 0.78rem; color: #94a3b8;">${m.label}</div>
         <div class="milestone-heroes-list">
-          <span>🛡️ ${m.heroes}</span>
+          <span>${m.heroes}</span>
         </div>
       </div>
     `).join('');
