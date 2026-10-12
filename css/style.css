@@ -1,6 +1,6 @@
 /* ==========================================================================
    Whiteout Survival - State 266 Official Portal Design System
-   "Where Endeavour Is" • The Frozen Bastion • AVM • SOK • ORA
+   State 266 Official Portal • AVM • SOK • ORA
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
@@ -216,23 +216,16 @@ h1, h2, h3, h4, h5 {
 .brand-text-block {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .brand-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: 0.05em;
-}
-
-.brand-subtitle {
-  font-family: var(--font-tactical);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--frost-cyan);
-  letter-spacing: 0.1em;
+  line-height: 1;
+  letter-spacing: 0.06em;
 }
 
 .nav-links {

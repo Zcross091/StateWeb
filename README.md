@@ -1,5 +1,5 @@
 # ❄️ State 266 Portal | Whiteout Survival
-> **"State Web for wherever Endeavour is"** — The official community hub and realm portal for **Whiteout Survival State #266 (The Frozen Bastion)**.
+> The official community portal for **Whiteout Survival State #266**.
 
 [![Deploy to GitHub Pages](https://github.com/Zcross091/StateWeb/actions/workflows/deploy.yml/badge.svg)](https://github.com/Zcross091/StateWeb/actions/workflows/deploy.yml)
 
