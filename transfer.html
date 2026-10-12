@@ -36,8 +36,9 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="index.html#mentor" class="nav-link">Endeavour</a></li>
           <li><a href="index.html#alliances" class="nav-link">The Big 3</a></li>
-          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
           <li><a href="index.html#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="index.html#gift-codes" class="nav-link">Gift Codes</a></li>
+          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
           <li><a href="academy.html" class="nav-link">Academy</a></li>
           <li><a href="calculators.html" class="nav-link">Calculators</a></li>
           <li><a href="transfer.html" class="nav-link active">Transfer</a></li>
@@ -217,6 +218,15 @@
       <div class="transfer-form">
         <h4 style="font-size: 1.15rem; color: #ffffff;">Generate & Submit Your Transfer Application</h4>
         
+        <!-- Player ID (FID) Lookup & Profile Verification -->
+        <div class="fid-lookup-box">
+          <input type="text" id="tf-fid" class="input-field" placeholder="Player ID / FID (e.g. 16278053)" style="flex: 1;">
+          <button type="button" class="btn btn-sm btn-secondary" id="btn-lookup-fid" style="white-space: nowrap;">
+            🔍 Verify Player ID
+          </button>
+        </div>
+        <div id="verified-player-display" class="verified-player-card" style="display: none;"></div>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <input type="text" id="tf-player-name" class="input-field" placeholder="In-Game Name *" required>
           <input type="text" id="tf-origin-state" class="input-field" placeholder="Current State # (e.g. 150) *" required>

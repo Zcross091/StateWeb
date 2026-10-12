@@ -42,8 +42,9 @@
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="#mentor" class="nav-link">Endeavour</a></li>
           <li><a href="#alliances" class="nav-link">The Big 3</a></li>
-          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
           <li><a href="#timetable" class="nav-link">Events & UTC</a></li>
+          <li><a href="#gift-codes" class="nav-link">Gift Codes</a></li>
+          <li><a href="rules.html" class="nav-link">Rules & NAP</a></li>
           <li><a href="academy.html" class="nav-link">Academy</a></li>
           <li><a href="calculators.html" class="nav-link">Calculators</a></li>
           <li><a href="transfer.html" class="nav-link">Transfer</a></li>
@@ -621,6 +622,70 @@
             </div>
           </div>
         </div>
+
+        <!-- STATE 266 SERVER TIMELINE & GENERATION TRACKER (API INTEGRATED) -->
+        <div class="server-timeline-card" id="server-timeline-card">
+          <div class="timeline-events-heading">
+            <span>⏳ State 266 Server Age & Content Timeline</span>
+            <span class="tag-credential veteran" id="state-age-badge">1,178+ Days Active</span>
+          </div>
+
+          <div class="timeline-stats-row">
+            <div class="timeline-stat-box">
+              <span class="timeline-stat-label">Server Opened</span>
+              <span class="timeline-stat-value" id="timeline-started-at">July 21, 2023 (10:35 UTC)</span>
+            </div>
+            <div class="timeline-stat-box">
+              <span class="timeline-stat-label">Server Age</span>
+              <span class="timeline-stat-value highlight" id="timeline-active-for">1,178 Days</span>
+            </div>
+            <div class="timeline-stat-box">
+              <span class="timeline-stat-label">Current Unlocked Era</span>
+              <span class="timeline-stat-value" style="color: #34d399;" id="timeline-active-gen">Gen 16 Heroes • FC 10</span>
+            </div>
+            <div class="timeline-stat-box">
+              <span class="timeline-stat-label">Next Generation</span>
+              <span class="timeline-stat-value" style="color: #fbbf24;" id="timeline-next-milestone">Gen 17 (~62 Days)</span>
+            </div>
+          </div>
+
+          <div class="timeline-events-container">
+            <div style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 0.75rem; font-weight: 600;">
+              Key Generation & Content Milestones:
+            </div>
+            <div class="timeline-milestones-grid" id="timeline-milestones-grid">
+              <!-- Dynamically populated or loaded via data/state-age.json -->
+            </div>
+          </div>
+          <div class="api-attribution">
+            <span>State progression data via WhiteoutSurvival.dev public timeline API.</span>
+            <a href="https://whiteoutsurvival.dev/state-age" target="_blank" rel="noopener">View Full Timeline ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE GIFT CODES SECTION (API INTEGRATED) -->
+    <section class="gift-codes-section" id="gift-codes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Public Redemption Center</span>
+          <h2 class="section-title">Active Gift Codes</h2>
+          <p class="section-subtitle">
+            Live verified redemption codes for Whiteout Survival. Copy any code with one click and redeem directly in-game or via Century Games.
+          </p>
+        </div>
+
+        <div class="gift-codes-grid" id="gift-codes-container">
+          <!-- Dynamically populated from API / data cache -->
+        </div>
+
+        <div class="api-attribution">
+          <span>Data provided by <a href="https://whiteoutsurvival.dev" target="_blank" rel="noopener">WhiteoutSurvival.dev</a>. Codes updated automatically.</span>
+          <a href="https://wos-giftcode.centurygame.com/" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+            🎁 Open Century Games Redeem Portal ↗
+          </a>
+        </div>
       </div>
     </section>
 
@@ -924,6 +989,15 @@
             <div class="transfer-form">
               <h4 style="font-size: 1.15rem; color: #ffffff;">Generate & Submit Your Transfer Application</h4>
               
+              <!-- Player ID (FID) Lookup & Profile Verification -->
+              <div class="fid-lookup-box">
+                <input type="text" id="tf-fid" class="input-field" placeholder="Player ID / FID (e.g. 16278053)" style="flex: 1;">
+                <button type="button" class="btn btn-sm btn-secondary" id="btn-lookup-fid" style="white-space: nowrap;">
+                  🔍 Verify Player ID
+                </button>
+              </div>
+              <div id="verified-player-display" class="verified-player-card" style="display: none;"></div>
+
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
                 <input type="text" id="tf-player-name" class="input-field" placeholder="In-Game Name *" required>
                 <input type="text" id="tf-origin-state" class="input-field" placeholder="Current State # (e.g. 150) *" required>
