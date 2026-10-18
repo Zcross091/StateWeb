@@ -7,9 +7,9 @@
   "codes": [
     {
       "code": "VIP1021",
-      "rewards": "Concierge only",
+      "rewards": "vip12_required",
       "expiry": "Unknown",
-      "description": "Concierge only",
+      "description": "vip12_required",
       "dateAdded": "2026-10-18T06:28:43.423Z",
       "status": "active",
       "isActive": true
@@ -33,6 +33,6 @@
       "isActive": true
     }
   ],
-  "lastUpdated": "2026-10-18T10:01:41.048Z",
+  "lastUpdated": "2026-10-18T15:00:20.163Z",
   "refreshAfterSeconds": 30
 }
