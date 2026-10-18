@@ -6,6 +6,24 @@
   },
   "codes": [
     {
+      "code": "VIP1021",
+      "rewards": "Concierge only",
+      "expiry": "Unknown",
+      "description": "Concierge only",
+      "dateAdded": "2026-10-18T06:28:43.423Z",
+      "status": "active",
+      "isActive": true
+    },
+    {
+      "code": "WOS1018",
+      "rewards": "Rewards not specified",
+      "expiry": "Unknown",
+      "description": "",
+      "dateAdded": "2026-10-18T06:15:15.689Z",
+      "status": "active",
+      "isActive": true
+    },
+    {
       "code": "GuDokYTKOR",
       "rewards": "Rewards not specified",
       "expiry": "Unknown",
@@ -13,17 +31,8 @@
       "dateAdded": "2026-08-07T06:58:15.951Z",
       "status": "active",
       "isActive": true
-    },
-    {
-      "code": "2ndYoutubeKR",
-      "rewards": "Rewards not specified",
-      "expiry": "Unknown",
-      "description": "",
-      "dateAdded": "2026-07-05T12:02:35.906Z",
-      "status": "active",
-      "isActive": true
     }
   ],
-  "lastUpdated": "2026-10-18T01:52:04.747Z",
+  "lastUpdated": "2026-10-18T10:01:41.048Z",
   "refreshAfterSeconds": 30
 }
