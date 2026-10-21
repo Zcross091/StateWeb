@@ -6,24 +6,6 @@
   },
   "codes": [
     {
-      "code": "VIP1021",
-      "rewards": "vip12_required",
-      "expiry": "Unknown",
-      "description": "vip12_required",
-      "dateAdded": "2026-10-18T06:28:43.423Z",
-      "status": "active",
-      "isActive": true
-    },
-    {
-      "code": "WOS1018",
-      "rewards": "Rewards not specified",
-      "expiry": "Unknown",
-      "description": "",
-      "dateAdded": "2026-10-18T06:15:15.689Z",
-      "status": "active",
-      "isActive": true
-    },
-    {
       "code": "GuDokYTKOR",
       "rewards": "Rewards not specified",
       "expiry": "Unknown",
@@ -33,6 +15,6 @@
       "isActive": true
     }
   ],
-  "lastUpdated": "2026-10-20T20:57:49.723Z",
+  "lastUpdated": "2026-10-21T02:18:07.887Z",
   "refreshAfterSeconds": 30
 }
